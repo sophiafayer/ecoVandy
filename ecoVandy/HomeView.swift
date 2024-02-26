@@ -11,23 +11,23 @@ struct HomeView: View {
     var body: some View {
         TabView{
             
-            HomePageView()
+            DummyHomePageView()
                 .tabItem { Label("Home", systemImage: "house.fill") }
             
-            TrackerView()
+            DummyTrackerView()
                 .tabItem { Label("Tracker", systemImage: "list.number") }
             
-            TipView()
+            DummyTipView()
                 .tabItem { Label("Tips", systemImage: "globe.americas.fill") }
             
-            ProfileView()
+            DummyProfileView()
                 .tabItem { Label("Profile", systemImage: "person.circle")}
         }
         //.accentColor(CustomColor.myColor)
     }
 }
 
-struct HomePageView: View {
+struct DummyHomePageView: View {
     var body: some View {
         VStack {
             Text("Home page here")
@@ -35,7 +35,7 @@ struct HomePageView: View {
         .padding()
     }
 }
-struct TrackerView: View {
+struct DummyTrackerView: View {
     var body: some View {
         VStack {
             Text("Tracker page here")
@@ -43,7 +43,7 @@ struct TrackerView: View {
         .padding()
     }
 }
-struct TipView: View {
+struct DummyTipView: View {
     var body: some View {
         VStack {
             Text("Tip page here")
@@ -51,7 +51,7 @@ struct TipView: View {
         .padding()
     }
 }
-struct ProfileView: View {
+struct DummyProfileView: View {
     var body: some View {
         VStack {
             Text("Profile page here")
