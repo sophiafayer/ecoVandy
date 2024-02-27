@@ -2,13 +2,18 @@
 //  HomeView.swift
 //  ecoVandy
 //
+<<<<<<< HEAD
 //  Created by Sophia Fayer on 2/21/24.
+=======
+//  Created by Kathleen Katchis on 2/26/24.
+>>>>>>> kathleen
 //
 
 import SwiftUI
 
 struct HomeView: View {
     var body: some View {
+<<<<<<< HEAD
         TabView{
             
             DummyHomePageView()
@@ -64,6 +69,12 @@ struct DummyProfileView: View {
           
 
 
+=======
+        Text("Home View")
+    }
+}
+
+>>>>>>> kathleen
 #Preview {
     HomeView()
 }
