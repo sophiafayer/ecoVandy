@@ -73,6 +73,15 @@
       }
     },
     {
+      "identity" : "horizoncalendar?tab=readme-ov-file",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/airbnb/HorizonCalendar?tab=readme-ov-file",
+      "state" : {
+        "branch" : "master",
+        "revision" : "6d6d11a6b304b3ee8703906cbd3eddfd33c784de"
+      }
+    },
+    {
       "identity" : "interop-ios-for-google-sdks",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/interop-ios-for-google-sdks.git",
