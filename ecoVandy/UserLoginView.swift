@@ -11,6 +11,7 @@ import FirebaseAuth
 import Firebase
 import FirebaseFirestore
 import GoogleSignIn
+import GoogleSignInSwift
 
 
 struct Login: View {
@@ -31,10 +32,9 @@ struct Login: View {
     //Sets background color
     
     var body: some View {
-        switch viewModel.state{
-        //If the user is not signed in yet
+       switch viewModel.state{
+        // If the user is not signed in yet
         case .signedOut:
-                ZStack {
                     //Displays the login button
                     VStack(spacing: 100) {
                         //Launches the signIn() function when the button is pressed,
@@ -59,11 +59,9 @@ struct Login: View {
                         .font(.title)
                     }
                     .padding()
-                }
-                .ignoresSafeArea()
         
         //If the user is signed in but doesn't have a record in the database,
-            //adds their record to the database
+        //adds their record to the database
         case .signedIn :
             if Auth.auth().currentUser != nil {
                 if let user = Auth.auth().currentUser {
@@ -113,8 +111,11 @@ struct Login: View {
 }
 
 //This provides a preview to developers who are editing this file in Xcode
-struct ContentView_Previews: PreviewProvider {
+struct UserLoginView_Previews: PreviewProvider {
     static var previews: some View {
         Login().environmentObject(AuthenticationViewModel())
+            .onOpenURL { url in
+                      GIDSignIn.sharedInstance.handle(url)
+                    }
     }
 }

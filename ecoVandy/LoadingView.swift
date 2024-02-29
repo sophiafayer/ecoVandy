@@ -2,7 +2,7 @@
 //  LoadingView.swift
 //  ecoVandy
 //
-//  Created by Caroline Dunn on 2/27/24.
+//  Created by Caroline Dunn on 2/29/24.
 //
 
 import Foundation
@@ -13,7 +13,7 @@ struct Loading: View {
     var body: some View {
         ZStack{
             VStack{
-                Image("login_logo")
+                Image("ecoVandy")
                     .resizable()
                     .scaledToFit()
 
@@ -30,4 +30,3 @@ struct Loading_Previews: PreviewProvider {
         Loading()
     }
 }
-

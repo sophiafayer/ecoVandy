@@ -54,11 +54,9 @@
 		B17DAE1F2B8E633F002FEA6E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17DAE1E2B8E633F002FEA6E /* NotificationManager.swift */; };
 		B17DAE202B8E633F002FEA6E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17DAE1E2B8E633F002FEA6E /* NotificationManager.swift */; };
 		B17DAE212B8E633F002FEA6E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17DAE1E2B8E633F002FEA6E /* NotificationManager.swift */; };
-		B17DAE272B8E648F002FEA6E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17DAE262B8E648F002FEA6E /* LoadingView.swift */; };
-		B17DAE282B8E648F002FEA6E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17DAE262B8E648F002FEA6E /* LoadingView.swift */; };
-		B17DAE292B8E648F002FEA6E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17DAE262B8E648F002FEA6E /* LoadingView.swift */; };
 		B1B85D3F2B8EA42B0019E602 /* UserLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B85D3E2B8EA42B0019E602 /* UserLoginView.swift */; };
 		B1BFED132B90E06F006EC0B7 /* CreateProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFED122B90E06F006EC0B7 /* CreateProfileView.swift */; };
+		B1E2D4FB2B91481B0098B9A2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E2D4FA2B91481B0098B9A2 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,10 +92,10 @@
 		B17DAE112B8E5C90002FEA6E /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		B17DAE152B8E5E9E002FEA6E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B17DAE1E2B8E633F002FEA6E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
-		B17DAE262B8E648F002FEA6E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		B1B85D3E2B8EA42B0019E602 /* UserLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginView.swift; sourceTree = "<group>"; };
 		B1BFED122B90E06F006EC0B7 /* CreateProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileView.swift; sourceTree = "<group>"; };
 		B1BFED142B90E63D006EC0B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B1E2D4FA2B91481B0098B9A2 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,9 +185,9 @@
 				B17DAE152B8E5E9E002FEA6E /* GoogleService-Info.plist */,
 				B17DAE112B8E5C90002FEA6E /* AuthenticationViewModel.swift */,
 				B17DAE1E2B8E633F002FEA6E /* NotificationManager.swift */,
-				B17DAE262B8E648F002FEA6E /* LoadingView.swift */,
 				B1B85D3E2B8EA42B0019E602 /* UserLoginView.swift */,
 				B1BFED122B90E06F006EC0B7 /* CreateProfileView.swift */,
+				B1E2D4FA2B91481B0098B9A2 /* LoadingView.swift */,
 			);
 			path = ecoVandy;
 			sourceTree = "<group>";
@@ -393,9 +391,9 @@
 				B1BFED132B90E06F006EC0B7 /* CreateProfileView.swift in Sources */,
 				B1B85D3F2B8EA42B0019E602 /* UserLoginView.swift in Sources */,
 				71BABD342B7D554E00904695 /* ContentView.swift in Sources */,
-				B17DAE272B8E648F002FEA6E /* LoadingView.swift in Sources */,
 				71BABD322B7D554E00904695 /* ecoVandyApp.swift in Sources */,
 				7119FF0C2B8D350200203D66 /* TrackerView.swift in Sources */,
+				B1E2D4FB2B91481B0098B9A2 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,7 +403,6 @@
 			files = (
 				B17DAE202B8E633F002FEA6E /* NotificationManager.swift in Sources */,
 				B17DAE132B8E5C90002FEA6E /* AuthenticationViewModel.swift in Sources */,
-				B17DAE282B8E648F002FEA6E /* LoadingView.swift in Sources */,
 				71BABD432B7D555000904695 /* ecoVandyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,7 +415,6 @@
 				71BABD4F2B7D555000904695 /* ecoVandyUITestsLaunchTests.swift in Sources */,
 				B17DAE212B8E633F002FEA6E /* NotificationManager.swift in Sources */,
 				71BABD4D2B7D555000904695 /* ecoVandyUITests.swift in Sources */,
-				B17DAE292B8E648F002FEA6E /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +491,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -551,6 +548,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;

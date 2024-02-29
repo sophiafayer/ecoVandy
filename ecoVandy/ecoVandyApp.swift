@@ -8,6 +8,7 @@
 import SwiftUI
 import FirebaseCore
 import GoogleSignIn
+import UserNotifications
 
 class AppDelegate: NSObject, UIApplicationDelegate {
   func application(_ application: UIApplication,
@@ -15,11 +16,19 @@ class AppDelegate: NSObject, UIApplicationDelegate {
       FirebaseApp.configure()
       return true
   }
-  func application(_ app: UIApplication,
+    func application(_ app: UIApplication,
                      open url: URL,
                      options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-      return GIDSignIn.sharedInstance.handle(url)
+        var handled: Bool
+
+          handled = GIDSignIn.sharedInstance.handle(url)
+        if handled {
+            return true
+          }
+        // If not handled by this app, return false.
+        return false
     }
+    
 }
 
 @main
@@ -32,6 +41,9 @@ struct ecoVandyApp: App {
         WindowGroup {
             NavigationView {
                 Login().environmentObject(AuthenticationViewModel())
+                    .onOpenURL { url in
+                              GIDSignIn.sharedInstance.handle(url)
+                    }
             }
         }
     }
