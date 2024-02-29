@@ -15,6 +15,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
       FirebaseApp.configure()
       return true
   }
+  func application(_ app: UIApplication,
+                     open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+      return GIDSignIn.sharedInstance.handle(url)
+    }
 }
 
 @main
