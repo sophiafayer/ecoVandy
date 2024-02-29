@@ -38,7 +38,7 @@ class AuthenticationViewModel: ObservableObject {
         // 4
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
         guard let rootViewController = windowScene.windows.first?.rootViewController else { return }
-
+        
         // 5
           GIDSignIn.sharedInstance.configuration = configuration
           GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController) {
@@ -66,7 +66,7 @@ class AuthenticationViewModel: ObservableObject {
         if let error = error {
           print(error.localizedDescription)
         } else {
-          self.state = .signedIn
+            self.state = .signedIn
         }
       }
     }
