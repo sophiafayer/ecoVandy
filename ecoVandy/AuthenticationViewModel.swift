@@ -4,6 +4,7 @@
 //
 //  Created by Caroline Dunn on 2/27/24.
 //
+// This file is used to help implement signing in with Google SSO.
 
 import Foundation
 import Firebase
@@ -37,7 +38,7 @@ class AuthenticationViewModel: ObservableObject {
         // 4
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
         guard let rootViewController = windowScene.windows.first?.rootViewController else { return }
-        
+
         // 5
           GIDSignIn.sharedInstance.configuration = configuration
           GIDSignIn.sharedInstance.signIn(withPresenting: rootViewController) {
