@@ -48,6 +48,23 @@
 		71BABD4D2B7D555000904695 /* ecoVandyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BABD4C2B7D555000904695 /* ecoVandyUITests.swift */; };
 		71BABD4F2B7D555000904695 /* ecoVandyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BABD4E2B7D555000904695 /* ecoVandyUITestsLaunchTests.swift */; };
 		71BCFE7C2B90B834000DD051 /* TrackerViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BCFE7B2B90B834000DD051 /* TrackerViewManager.swift */; };
+		B17DAE122B8E5C90002FEA6E /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17DAE112B8E5C90002FEA6E /* AuthenticationViewModel.swift */; };
+		B17DAE132B8E5C90002FEA6E /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17DAE112B8E5C90002FEA6E /* AuthenticationViewModel.swift */; };
+		B17DAE142B8E5C90002FEA6E /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17DAE112B8E5C90002FEA6E /* AuthenticationViewModel.swift */; };
+		B17DAE162B8E5E9E002FEA6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B17DAE152B8E5E9E002FEA6E /* GoogleService-Info.plist */; };
+		B17DAE172B8E5E9E002FEA6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B17DAE152B8E5E9E002FEA6E /* GoogleService-Info.plist */; };
+		B17DAE182B8E5E9E002FEA6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B17DAE152B8E5E9E002FEA6E /* GoogleService-Info.plist */; };
+		B17DAE1B2B8E6107002FEA6E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = B17DAE1A2B8E6107002FEA6E /* GoogleSignIn */; };
+		B17DAE1D2B8E6107002FEA6E /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B17DAE1C2B8E6107002FEA6E /* GoogleSignInSwift */; };
+		B17DAE1F2B8E633F002FEA6E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17DAE1E2B8E633F002FEA6E /* NotificationManager.swift */; };
+		B17DAE202B8E633F002FEA6E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17DAE1E2B8E633F002FEA6E /* NotificationManager.swift */; };
+		B17DAE212B8E633F002FEA6E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17DAE1E2B8E633F002FEA6E /* NotificationManager.swift */; };
+		B17DAE272B8E648F002FEA6E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17DAE262B8E648F002FEA6E /* LoadingView.swift */; };
+		B17DAE282B8E648F002FEA6E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17DAE262B8E648F002FEA6E /* LoadingView.swift */; };
+		B17DAE292B8E648F002FEA6E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17DAE262B8E648F002FEA6E /* LoadingView.swift */; };
+		B1B85D3F2B8EA42B0019E602 /* UserLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B85D3E2B8EA42B0019E602 /* UserLoginView.swift */; };
+		B1BFED132B90E06F006EC0B7 /* CreateProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1BFED122B90E06F006EC0B7 /* CreateProfileView.swift */; };
+>>>>>>> main
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +86,6 @@
 
 /* Begin PBXFileReference section */
 		7119FF0B2B8D350200203D66 /* TrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerView.swift; sourceTree = "<group>"; };
-		7119FF112B8D8AFF00203D66 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../.Trash/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		718F11D12B86A791001EEB89 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		71BABD2E2B7D554E00904695 /* ecoVandy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ecoVandy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BABD312B7D554E00904695 /* ecoVandyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ecoVandyApp.swift; sourceTree = "<group>"; };
@@ -82,6 +98,14 @@
 		71BABD4C2B7D555000904695 /* ecoVandyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ecoVandyUITests.swift; sourceTree = "<group>"; };
 		71BABD4E2B7D555000904695 /* ecoVandyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ecoVandyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		71BCFE7B2B90B834000DD051 /* TrackerViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewManager.swift; sourceTree = "<group>"; };
+		B17DAE112B8E5C90002FEA6E /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		B17DAE152B8E5E9E002FEA6E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B17DAE1E2B8E633F002FEA6E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		B17DAE262B8E648F002FEA6E /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		B1B85D3E2B8EA42B0019E602 /* UserLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginView.swift; sourceTree = "<group>"; };
+		B1BFED122B90E06F006EC0B7 /* CreateProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileView.swift; sourceTree = "<group>"; };
+		B1BFED142B90E63D006EC0B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,12 +120,14 @@
 				7119FED62B8D246D00203D66 /* FirebaseAnalytics in Frameworks */,
 				7119FED82B8D246D00203D66 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				7119FEFE2B8D246D00203D66 /* FirebaseMLModelDownloader in Frameworks */,
+				B17DAE1D2B8E6107002FEA6E /* GoogleSignInSwift in Frameworks */,
 				7119FEF22B8D246D00203D66 /* FirebaseFirestoreSwift in Frameworks */,
 				7119FEDE2B8D246D00203D66 /* FirebaseAppCheck in Frameworks */,
 				7119FEDC2B8D246D00203D66 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				7119FEE22B8D246D00203D66 /* FirebaseAuth in Frameworks */,
 				7119FEE62B8D246D00203D66 /* FirebaseCrashlytics in Frameworks */,
 				7119FF062B8D246D00203D66 /* FirebaseRemoteConfigSwift in Frameworks */,
+				B17DAE1B2B8E6107002FEA6E /* GoogleSignIn in Frameworks */,
 				7119FEF82B8D246D00203D66 /* FirebaseInAppMessaging-Beta in Frameworks */,
 				7119FEEA2B8D246D00203D66 /* FirebaseDatabaseSwift in Frameworks */,
 				7119FEF42B8D246D00203D66 /* FirebaseFunctions in Frameworks */,
@@ -160,14 +186,20 @@
 		71BABD302B7D554E00904695 /* ecoVandy */ = {
 			isa = PBXGroup;
 			children = (
+				B1BFED142B90E63D006EC0B7 /* Info.plist */,
 				71BABD312B7D554E00904695 /* ecoVandyApp.swift */,
 				71BABD332B7D554E00904695 /* ContentView.swift */,
 				71BABD352B7D555000904695 /* Assets.xcassets */,
 				71BABD372B7D555000904695 /* Preview Content */,
 				718F11D12B86A791001EEB89 /* HomeView.swift */,
-				7119FF112B8D8AFF00203D66 /* GoogleService-Info.plist */,
 				7119FF0B2B8D350200203D66 /* TrackerView.swift */,
 				71BCFE7B2B90B834000DD051 /* TrackerViewManager.swift */,
+				B17DAE152B8E5E9E002FEA6E /* GoogleService-Info.plist */,
+				B17DAE112B8E5C90002FEA6E /* AuthenticationViewModel.swift */,
+				B17DAE1E2B8E633F002FEA6E /* NotificationManager.swift */,
+				B17DAE262B8E648F002FEA6E /* LoadingView.swift */,
+				B1B85D3E2B8EA42B0019E602 /* UserLoginView.swift */,
+				B1BFED122B90E06F006EC0B7 /* CreateProfileView.swift */,
 			);
 			path = ecoVandy;
 			sourceTree = "<group>";
@@ -242,6 +274,9 @@
 				7119FF072B8D246D00203D66 /* FirebaseStorage */,
 				7119FF092B8D246D00203D66 /* FirebaseStorageCombine-Community */,
 				7150E5652B8FDD3400E39F8C /* HorizonCalendar */,
+				B17DAE1A2B8E6107002FEA6E /* GoogleSignIn */,
+				B17DAE1C2B8E6107002FEA6E /* GoogleSignInSwift */,
+
 			);
 			productName = ecoVandy;
 			productReference = 71BABD2E2B7D554E00904695 /* ecoVandy.app */;
@@ -318,6 +353,8 @@
 			packageReferences = (
 				7119FED42B8D246D00203D66 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				7150E5642B8FDD3400E39F8C /* XCRemoteSwiftPackageReference "HorizonCalendar" */,
+				B17DAE192B8E6107002FEA6E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+
 			);
 			productRefGroup = 71BABD2F2B7D554E00904695 /* Products */;
 			projectDirPath = "";
@@ -336,8 +373,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				71BABD392B7D555000904695 /* Preview Assets.xcassets in Resources */,
-				7119FF122B8D8AFF00203D66 /* GoogleService-Info.plist in Resources */,
 				71BABD362B7D555000904695 /* Assets.xcassets in Resources */,
+				B17DAE162B8E5E9E002FEA6E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,7 +382,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7119FF132B8D8AFF00203D66 /* GoogleService-Info.plist in Resources */,
+				B17DAE172B8E5E9E002FEA6E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,7 +390,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7119FF142B8D8AFF00203D66 /* GoogleService-Info.plist in Resources */,
+				B17DAE182B8E5E9E002FEA6E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,8 +401,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B17DAE1F2B8E633F002FEA6E /* NotificationManager.swift in Sources */,
 				718F11D22B86A791001EEB89 /* HomeView.swift in Sources */,
+				B17DAE122B8E5C90002FEA6E /* AuthenticationViewModel.swift in Sources */,
+				B1BFED132B90E06F006EC0B7 /* CreateProfileView.swift in Sources */,
+				B1B85D3F2B8EA42B0019E602 /* UserLoginView.swift in Sources */,
 				71BABD342B7D554E00904695 /* ContentView.swift in Sources */,
+				B17DAE272B8E648F002FEA6E /* LoadingView.swift in Sources */,
 				71BABD322B7D554E00904695 /* ecoVandyApp.swift in Sources */,
 				71BCFE7C2B90B834000DD051 /* TrackerViewManager.swift in Sources */,
 				7119FF0C2B8D350200203D66 /* TrackerView.swift in Sources */,
@@ -376,6 +418,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B17DAE202B8E633F002FEA6E /* NotificationManager.swift in Sources */,
+				B17DAE132B8E5C90002FEA6E /* AuthenticationViewModel.swift in Sources */,
+				B17DAE282B8E648F002FEA6E /* LoadingView.swift in Sources */,
 				71BABD432B7D555000904695 /* ecoVandyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,8 +429,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B17DAE142B8E5C90002FEA6E /* AuthenticationViewModel.swift in Sources */,
 				71BABD4F2B7D555000904695 /* ecoVandyUITestsLaunchTests.swift in Sources */,
+				B17DAE212B8E633F002FEA6E /* NotificationManager.swift in Sources */,
 				71BABD4D2B7D555000904695 /* ecoVandyUITests.swift in Sources */,
+				B17DAE292B8E648F002FEA6E /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,12 +577,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ecoVandy/Preview Content\"";
-				DEVELOPMENT_TEAM = 5RQ3N9P7TZ;
+				DEVELOPMENT_TEAM = LJ244AK69T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ecoVandy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -548,6 +598,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.SophiaFayer.ecoVandy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -560,12 +611,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ecoVandy/Preview Content\"";
-				DEVELOPMENT_TEAM = 5RQ3N9P7TZ;
+				DEVELOPMENT_TEAM = LJ244AK69T;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ecoVandy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -579,6 +632,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ecoVandy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -708,12 +762,21 @@
 				minimumVersion = 10.21.0;
 			};
 		};
+
 		7150E5642B8FDD3400E39F8C /* XCRemoteSwiftPackageReference "HorizonCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/HorizonCalendar?tab=readme-ov-file";
 			requirement = {
 				branch = master;
 				kind = branch;
+			};
+		};
+		B17DAE192B8E6107002FEA6E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -854,10 +917,22 @@
 			package = 7119FED42B8D246D00203D66 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
 		};
+
 		7150E5652B8FDD3400E39F8C /* HorizonCalendar */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7150E5642B8FDD3400E39F8C /* XCRemoteSwiftPackageReference "HorizonCalendar" */;
 			productName = HorizonCalendar;
+    };
+		B17DAE1A2B8E6107002FEA6E /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B17DAE192B8E6107002FEA6E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		B17DAE1C2B8E6107002FEA6E /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B17DAE192B8E6107002FEA6E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
