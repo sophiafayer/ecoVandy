@@ -35,6 +35,10 @@
 		7119FF082B8D246D00203D66 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 7119FF072B8D246D00203D66 /* FirebaseStorage */; };
 		7119FF0A2B8D246D00203D66 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 7119FF092B8D246D00203D66 /* FirebaseStorageCombine-Community */; };
 		7119FF0C2B8D350200203D66 /* TrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7119FF0B2B8D350200203D66 /* TrackerView.swift */; };
+		7161349A2B91473F007AF44E /* TrackerViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716134992B91473F007AF44E /* TrackerViewManager.swift */; };
+		7161349C2B914752007AF44E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7161349B2B914752007AF44E /* GoogleService-Info.plist */; };
+		7161349D2B914752007AF44E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7161349B2B914752007AF44E /* GoogleService-Info.plist */; };
+		7161349E2B914752007AF44E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7161349B2B914752007AF44E /* GoogleService-Info.plist */; };
 		718F11D22B86A791001EEB89 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718F11D12B86A791001EEB89 /* HomeView.swift */; };
 		71BABD322B7D554E00904695 /* ecoVandyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BABD312B7D554E00904695 /* ecoVandyApp.swift */; };
 		71BABD342B7D554E00904695 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BABD332B7D554E00904695 /* ContentView.swift */; };
@@ -46,9 +50,6 @@
 		B17DAE122B8E5C90002FEA6E /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17DAE112B8E5C90002FEA6E /* AuthenticationViewModel.swift */; };
 		B17DAE132B8E5C90002FEA6E /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17DAE112B8E5C90002FEA6E /* AuthenticationViewModel.swift */; };
 		B17DAE142B8E5C90002FEA6E /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17DAE112B8E5C90002FEA6E /* AuthenticationViewModel.swift */; };
-		B17DAE162B8E5E9E002FEA6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B17DAE152B8E5E9E002FEA6E /* GoogleService-Info.plist */; };
-		B17DAE172B8E5E9E002FEA6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B17DAE152B8E5E9E002FEA6E /* GoogleService-Info.plist */; };
-		B17DAE182B8E5E9E002FEA6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B17DAE152B8E5E9E002FEA6E /* GoogleService-Info.plist */; };
 		B17DAE1B2B8E6107002FEA6E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = B17DAE1A2B8E6107002FEA6E /* GoogleSignIn */; };
 		B17DAE1D2B8E6107002FEA6E /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B17DAE1C2B8E6107002FEA6E /* GoogleSignInSwift */; };
 		B17DAE1F2B8E633F002FEA6E /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17DAE1E2B8E633F002FEA6E /* NotificationManager.swift */; };
@@ -78,6 +79,8 @@
 
 /* Begin PBXFileReference section */
 		7119FF0B2B8D350200203D66 /* TrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerView.swift; sourceTree = "<group>"; };
+		716134992B91473F007AF44E /* TrackerViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewManager.swift; sourceTree = "<group>"; };
+		7161349B2B914752007AF44E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../backups/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		718F11D12B86A791001EEB89 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		71BABD2E2B7D554E00904695 /* ecoVandy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ecoVandy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BABD312B7D554E00904695 /* ecoVandyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ecoVandyApp.swift; sourceTree = "<group>"; };
@@ -90,7 +93,6 @@
 		71BABD4C2B7D555000904695 /* ecoVandyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ecoVandyUITests.swift; sourceTree = "<group>"; };
 		71BABD4E2B7D555000904695 /* ecoVandyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ecoVandyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B17DAE112B8E5C90002FEA6E /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
-		B17DAE152B8E5E9E002FEA6E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B17DAE1E2B8E633F002FEA6E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		B1B85D3E2B8EA42B0019E602 /* UserLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginView.swift; sourceTree = "<group>"; };
 		B1BFED122B90E06F006EC0B7 /* CreateProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileView.swift; sourceTree = "<group>"; };
@@ -182,12 +184,13 @@
 				71BABD372B7D555000904695 /* Preview Content */,
 				718F11D12B86A791001EEB89 /* HomeView.swift */,
 				7119FF0B2B8D350200203D66 /* TrackerView.swift */,
-				B17DAE152B8E5E9E002FEA6E /* GoogleService-Info.plist */,
 				B17DAE112B8E5C90002FEA6E /* AuthenticationViewModel.swift */,
 				B17DAE1E2B8E633F002FEA6E /* NotificationManager.swift */,
 				B1B85D3E2B8EA42B0019E602 /* UserLoginView.swift */,
 				B1BFED122B90E06F006EC0B7 /* CreateProfileView.swift */,
 				B1E2D4FA2B91481B0098B9A2 /* LoadingView.swift */,
+				716134992B91473F007AF44E /* TrackerViewManager.swift */,
+				7161349B2B914752007AF44E /* GoogleService-Info.plist */,
 			);
 			path = ecoVandy;
 			sourceTree = "<group>";
@@ -358,7 +361,7 @@
 			files = (
 				71BABD392B7D555000904695 /* Preview Assets.xcassets in Resources */,
 				71BABD362B7D555000904695 /* Assets.xcassets in Resources */,
-				B17DAE162B8E5E9E002FEA6E /* GoogleService-Info.plist in Resources */,
+				7161349C2B914752007AF44E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +369,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B17DAE172B8E5E9E002FEA6E /* GoogleService-Info.plist in Resources */,
+				7161349D2B914752007AF44E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,7 +377,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B17DAE182B8E5E9E002FEA6E /* GoogleService-Info.plist in Resources */,
+				7161349E2B914752007AF44E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +391,7 @@
 				B17DAE1F2B8E633F002FEA6E /* NotificationManager.swift in Sources */,
 				718F11D22B86A791001EEB89 /* HomeView.swift in Sources */,
 				B17DAE122B8E5C90002FEA6E /* AuthenticationViewModel.swift in Sources */,
+				7161349A2B91473F007AF44E /* TrackerViewManager.swift in Sources */,
 				B1BFED132B90E06F006EC0B7 /* CreateProfileView.swift in Sources */,
 				B1B85D3F2B8EA42B0019E602 /* UserLoginView.swift in Sources */,
 				71BABD342B7D554E00904695 /* ContentView.swift in Sources */,
