@@ -57,6 +57,11 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+<<<<<<< HEAD
+=======
+      disableMainThreadChecker = "YES"
+      disablePerformanceAntipatternChecker = "YES"
+>>>>>>> main
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -73,6 +78,7 @@
             ReferencedContainer = "container:ecoVandy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+<<<<<<< HEAD
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "OS_ACTIVITY_MODE"
@@ -80,6 +86,8 @@
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
+=======
+>>>>>>> main
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
