@@ -9,12 +9,17 @@ import SwiftUI
 
 struct TipView: View {
     var body: some View {
-        VStack{
-            Text("Sustainable Tip of the Day!")
-            
-            Text("Eat vegetables")
+        ZStack{
+            Color.green
+                .ignoresSafeArea()
+            VStack{
+                
+                Text("Sustainable Tip of the Day!")
+                    .font(.title)
+                
+                
+            }
         }
-        
     }
 }
 
