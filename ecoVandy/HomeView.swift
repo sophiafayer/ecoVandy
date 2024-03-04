@@ -18,10 +18,10 @@ struct HomeView: View {
             DummyTrackerView()
                 .tabItem { Label("Tracker", systemImage: "list.number") }
             
-            DummyTipView()
+            TipView()
                 .tabItem { Label("Tips", systemImage: "globe.americas.fill") }
             
-            DummyProfileView()
+            ProfileView()
                 .tabItem { Label("Profile", systemImage: "person.circle")}
         }
         //.accentColor(CustomColor.myColor)
@@ -44,6 +44,7 @@ struct DummyTrackerView: View {
         .padding()
     }
 }
+
 struct DummyTipView: View {
     var body: some View {
         VStack {
