@@ -62,6 +62,7 @@ class AuthenticationViewModel: ObservableObject {
                  switch result {
                  case .success(let authResults):
                      NotificationManager.instance.requestAuthorization()
+                     self.state = .signedIn
                      if let appleIDCredential = authResults.credential as? ASAuthorizationAppleIDCredential {
                          guard let nonce = self.currentNonce else {
                            fatalError("Invalid state: A login callback was received, but no login request was sent.")

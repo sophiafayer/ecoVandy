@@ -115,6 +115,7 @@ struct CreateProfileView: View {
                 }
             }
         }
+        
     }
     func saveProfileToFirebase(){
         let db = Firestore.firestore()
