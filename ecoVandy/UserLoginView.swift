@@ -86,7 +86,8 @@ struct Login: View {
                 //Adds the user information to the users collection in the database
                 else {
                     db.collection("users").document(user!.email!).setData([
-                        "firstName": "TestName",
+                        "firstName": "",
+                        "lastName": "",
                         "email": user!.email!,
                         "firstSignIn": true
                     ])
