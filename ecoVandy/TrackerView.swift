@@ -46,14 +46,18 @@ struct TrackerView: View {
                     //ForEach habit (loop through array with all habits)
                     //displays habit tracker data
                     ForEach( trackerVM.habits) { habit in
-                        Text(habit.id)
-                            .font(.headline)
-                            .bold()
-                            .foregroundColor(.black)
-                            .frame(width: 300, height: 50)
-                            .background(.green)
-                            .cornerRadius(10)
-                            .padding(.bottom, 10)
+                        
+                        if (habit.id == "sophia.k.fayer@vanderbilt.edu"){
+                            Text(habit.id)
+                                .font(.headline)
+                                .bold()
+                                .foregroundColor(.black)
+                                .frame(width: 300, height: 50)
+                                .background(.green)
+                                .cornerRadius(10)
+                                .padding(.bottom, 10)
+                        }
+                        
                             
                         }
                     }
