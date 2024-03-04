@@ -13,6 +13,8 @@ struct TrackerView: View {
     //change to Caroline's
     @ObservedObject var trackerVM = TrackerViewModel()
     
+    //@State var habitTypes = ["meatlessMeals", "milesDriven"] //, "bottlesUsed"]
+    
     var body: some View{
         ZStack{
             VStack{
@@ -27,6 +29,15 @@ struct TrackerView: View {
                         .datePickerStyle(.compact)
                         .tint(.green)
                     .padding(.horizontal)
+                    .onChange(of: selectedDate){
+                        newVal in
+                        
+                            self.trackerVM.fetchHabitData(date: selectedDate.formatted(date: .numeric, time: .omitted))
+//                        for habitType in habitTypes{
+//                            self.trackerVM.fetchData(date: selectedDate.formatted(date: .numeric, time: .omitted), habitType: habitType)
+//                        }
+//                        self.trackerVM.fetchData(date: selectedDate.formatted(date: .numeric, time: .omitted))
+                    }
                 
                 //replace with dynamic graphic
                 Image("ScoreGraphicPlaceholder")
@@ -34,21 +45,28 @@ struct TrackerView: View {
                     .frame(width:350,height: 200)
                     .padding()
                 
-                //Displays calendar
+                Text("My Sustainable Habits:")
+                    .font(.title3)
+                    .bold()
+                    .padding()
+                
                 ScrollView {
-                    
-                    Text("My Sustainable Habits:")
-                        .font(.title3)
-                        .bold()
-                        .padding()
                     
                     
                     //ForEach habit (loop through array with all habits)
                     //displays habit tracker data
                     ForEach( trackerVM.habits) { habit in
-                        
+                        //currUsesr
                         if (habit.id == "sophia.k.fayer@vanderbilt.edu"){
-                            Text(habit.id)
+                            Text("Meatless Meals: " + habit.meatlessMeals)
+                                .font(.headline)
+                                .bold()
+                                .foregroundColor(.black)
+                                .frame(width: 300, height: 50)
+                                .background(.green)
+                                .cornerRadius(10)
+                                .padding(.bottom, 10)
+                            Text("Miles Driven: " + habit.milesDriven)
                                 .font(.headline)
                                 .bold()
                                 .foregroundColor(.black)
@@ -65,11 +83,18 @@ struct TrackerView: View {
                 
             }
             .onAppear(){
-                self.trackerVM.fetchData(id: "sophia.k.fayer@vanderbilt.edu", date: selectedDate.formatted(date: .complete, time: .omitted), habitType: "meatlessMeals")
-
                 
-        
+//                for habitType in habitTypes{
+//                    self.trackerVM.fetchHabitData( date: selectedDate.formatted(date: .numeric, time: .omitted))
+//                }
+                self.trackerVM.fetchHabitData( date: selectedDate.formatted(date: .numeric, time: .omitted))
             }
+//            .onChange(of: selectedDate){
+//                    self.trackerVM.fetchData( date: selectedDate.formatted(date: .numeric, time: .omitted), habitType: "meatlessMeals")
+//
+//                
+//            }
+//            .onChange(of: selectedDate, perform: {self.trackerVM.fetchData(date: selectedDate.formatted(date: .numeric, time: .omitted), habitType: "meatlessMeals")})
         }
 }
 

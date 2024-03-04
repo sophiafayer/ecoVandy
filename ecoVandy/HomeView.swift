@@ -15,7 +15,7 @@ struct HomeView: View {
             DummyHomePageView()
                 .tabItem { Label("Home", systemImage: "house.fill") }
             
-            DummyTrackerView()
+            TrackerView()
                 .tabItem { Label("Tracker", systemImage: "list.number") }
             
             DummyTipView()

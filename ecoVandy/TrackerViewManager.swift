@@ -10,22 +10,24 @@ import Foundation
 import FirebaseCore
 import FirebaseFirestore
 
+//add var for all habits and habit Vals
 struct Habit: Identifiable, Equatable {
     var id: String
     var name: String
     var date: String
-    var habit: String
-    var habitVal: String
+    var meatlessMeals: String
+    var milesDriven: String
 }
 
 class TrackerViewModel: ObservableObject{
     
     @Published var habits = [Habit]()
     
+    let habitTypes = ["meatlessMeals", "milesDriven"] //, "bottlesUsed"]
+    
     private var db = Firestore.firestore()
     
-    func fetchData(id: String, date: String, habitType: String){
-        //pull all users
+    func fetchHabitData(date: String){
         db.collection("users").addSnapshotListener{ (QuerySnapshot, error) in guard let documents = QuerySnapshot?.documents else {
             print("No Documents")
             return
@@ -36,19 +38,79 @@ class TrackerViewModel: ObservableObject{
                 //verify correct data is pulled for each user
             if let userID = data["email"] as? String,
             let name = data["name"] as? String,
-            let habitData = data[habitType] as? [String: Any]
-                //,
-            //let habitVal = habitData[date] as? String
-                {
-                let habit = Habit(id: userID.lowercased(), name: name, date: date, habit: habitType, habitVal: "NA")
+            let meatlessMealsData = data["meatlessMeals"] as? [String: String],
+            let meatlessMealsVal = meatlessMealsData[date],
+            let milesDrivenData = data["milesDriven"] as? [String: String],
+            let milesDrivenVal = milesDrivenData[date] {
+                let habit = Habit(id: userID.lowercased(), name: name, date: date, meatlessMeals: meatlessMealsVal, milesDriven: milesDrivenVal)
             return habit
             }else{
-                //send match data to MatchedListView
-                return Habit(id: "NA", name: "NA", date: "NA", habit: "NA", habitVal: "NA")
+                return Habit(id: "NA", name: "NA", date: "NA", meatlessMeals: "NA", milesDriven: "NA")
             }
             }
         }
     }
+    
+//    func fetchData(date: String){
+//        //pull all users
+//        db.collection("users").addSnapshotListener{ (QuerySnapshot, error) in guard let documents = QuerySnapshot?.documents else {
+//            print("No Documents")
+//            return
+//        }
+//            for habitType in self.habitTypes {
+//                self.habits = documents.map { (QueryDocumentSnapshot) in
+//                let data = QueryDocumentSnapshot.data()
+//                    //verify correct data is pulled for each user
+//                if let userID = data["email"] as? String,
+//                let name = data["name"] as? String,
+//                let habitData = data[habitType] as? [String: String],
+//                let habitVal = habitData[date]
+//
+//                //let habitData = data[habitType] as? [String: Any]
+//                    //,
+//                //let habitVal = habitData[date] as? String
+//                    {
+//                    let habit = Habit(id: userID.lowercased(), name: name, date: date, habit: habitType, habitVal: habitVal)
+//                return habit
+//                }else{
+//                    //send match data to MatchedListView
+//                    return Habit(id: "NA", name: "NA", date: "NA", habit: "NA", habitVal: "NA")
+//                }
+//                }
+//
+//            }
+//            
+//        }
+//    }
+    
+//    func fetchData(date: String, habitType: String){
+//        //pull all users
+//        db.collection("users").addSnapshotListener{ (QuerySnapshot, error) in guard let documents = QuerySnapshot?.documents else {
+//            print("No Documents")
+//            return
+//        }
+//            
+//            self.habits = documents.map { (QueryDocumentSnapshot) in
+//            let data = QueryDocumentSnapshot.data()
+//                //verify correct data is pulled for each user
+//            if let userID = data["email"] as? String,
+//            let name = data["name"] as? String,
+//            let habitData = data[habitType] as? [String: String],
+//            let habitVal = habitData[date]
+//
+//            //let habitData = data[habitType] as? [String: Any]
+//                //,
+//            //let habitVal = habitData[date] as? String
+//                {
+//                let habit = Habit(id: userID.lowercased(), name: name, date: date, habit: habitType, habitVal: habitVal)
+//            return habit
+//            }else{
+//                //send match data to MatchedListView
+//                return Habit(id: "NA", name: "NA", date: "NA", habit: "NA", habitVal: "NA")
+//            }
+//            }
+//        }
+//    }
     
 }
 
