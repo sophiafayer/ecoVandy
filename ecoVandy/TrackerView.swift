@@ -11,7 +11,7 @@ struct TrackerView: View {
     @State var selectedDate = Date()
     
     //change to Caroline's
-    //@ObservedObject var trackerVM = TrackerViewModel()
+    @ObservedObject var trackerVM = TrackerViewModel()
     
     var body: some View{
         ZStack{
@@ -43,25 +43,26 @@ struct TrackerView: View {
                         .padding()
                     
                     
+                    //ForEach habit (loop through array with all habits)
                     //displays habit tracker data
-//                    ForEach( trackerVM.habits) {habit in
-//                        Text(habit.first + ": " + habit.last)
-//                            .font(.headline)
-//                            .bold()
-//                            .foregroundColor(.black)
-//                            .frame(width: 300, height: 50)
-//                            .background(.green)
-//                            .cornerRadius(10)
-//                            .padding(.bottom, 10)
-//                            
-//                        }
+                    ForEach( trackerVM.habits) { habit in
+                        Text(habit.id)
+                            .font(.headline)
+                            .bold()
+                            .foregroundColor(.black)
+                            .frame(width: 300, height: 50)
+                            .background(.green)
+                            .cornerRadius(10)
+                            .padding(.bottom, 10)
+                            
+                        }
                     }
                 }
                 
             }
             .onAppear(){
-//                self.trackerVM.fetchHabit(id: "ypfTAHk2RRwuccNKRYi3", habit: "meatlessMeals", date: selectedDate.formatted(date: .complete, time: .omitted))
-                //self.trackerVM.fetchHabit(id: "ypfTAHk2RRwuccNKRYi3")
+                self.trackerVM.fetchData(id: "sophia.k.fayer@vanderbilt.edu", date: selectedDate.formatted(date: .complete, time: .omitted), habitType: "meatlessMeals")
+
                 
         
             }
