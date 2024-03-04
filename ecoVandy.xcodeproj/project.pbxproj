@@ -97,6 +97,7 @@
 		71BABD4C2B7D555000904695 /* ecoVandyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ecoVandyUITests.swift; sourceTree = "<group>"; };
 		71BABD4E2B7D555000904695 /* ecoVandyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ecoVandyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		71F7E3DF2B955111000A0E26 /* ecoVandyRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ecoVandyRelease.entitlements; sourceTree = "<group>"; };
+		71F7E3E02B955F64000A0E26 /* ecoVandyDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ecoVandyDebug.entitlements; sourceTree = "<group>"; };
 		B17DAE112B8E5C90002FEA6E /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		B17DAE1E2B8E633F002FEA6E /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		B1B85D3E2B8EA42B0019E602 /* UserLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoginView.swift; sourceTree = "<group>"; };
@@ -182,6 +183,7 @@
 		71BABD302B7D554E00904695 /* ecoVandy */ = {
 			isa = PBXGroup;
 			children = (
+				71F7E3E02B955F64000A0E26 /* ecoVandyDebug.entitlements */,
 				71F7E3DF2B955111000A0E26 /* ecoVandyRelease.entitlements */,
 				B1BFED142B90E63D006EC0B7 /* Info.plist */,
 				71BABD312B7D554E00904695 /* ecoVandyApp.swift */,
@@ -574,11 +576,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = ecoVandy/ecoVandyDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ecoVandy/Preview Content\"";
-				DEVELOPMENT_TEAM = LJ244AK69T;
+				DEVELOPMENT_TEAM = 5RQ3N9P7TZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ecoVandy/Info.plist;
@@ -664,6 +667,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5RQ3N9P7TZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MARKETING_VERSION = 1.0;
@@ -699,6 +703,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5RQ3N9P7TZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.ecoVandyUITests;
