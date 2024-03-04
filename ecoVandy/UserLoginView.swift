@@ -36,12 +36,12 @@ struct Login: View {
         // If the user is not signed in yet
         case .signedOut:
                     //Displays the login button
-                    VStack(spacing: 100) {
+                    VStack(spacing: 30) {
                         //Launches the signIn() function when the button is pressed,
                         // which allows the user to sign in with Google
                         Button(action: {
                             NotificationManager.instance.requestAuthorization()
-                            viewModel.signIn()
+                            viewModel.signInWithGoogle()
                         }){
                             Text("Sign in with")
                                 .foregroundColor(.black)
@@ -56,7 +56,9 @@ struct Login: View {
                             .cornerRadius(10)
                             .shadow(color: .gray, radius: 2, x: 0, y: 2))
                         .foregroundColor(.black)
+                        .fontWeight(.medium)
                         .font(.title)
+                        viewModel.signInWithApple()
                     }
                     .padding()
         
