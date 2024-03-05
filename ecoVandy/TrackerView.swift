@@ -16,79 +16,97 @@ struct TrackerView: View {
     //@State var habitTypes = ["meatlessMeals", "milesDriven"] //, "bottlesUsed"]
     
     var body: some View{
-        ZStack{
-            VStack{
-                Text("Sustainability Tracker")
-                    .multilineTextAlignment(.leading)
-                    .font(.title2)
-                    .bold()
-                    .padding()
-                
-                //replace with weekly calendar view and monthly view at top
-                DatePicker("Select Date", selection: $selectedDate, in: ...Date(), displayedComponents: [.date])
-                        .datePickerStyle(.compact)
-                        .tint(.green)
-                    .padding(.horizontal)
-                    .onChange(of: selectedDate){
-                        newVal in
-                        
-                            self.trackerVM.fetchHabitData(date: selectedDate.formatted(date: .numeric, time: .omitted))
-//                        for habitType in habitTypes{
-//                            self.trackerVM.fetchData(date: selectedDate.formatted(date: .numeric, time: .omitted), habitType: habitType)
-//                        }
-//                        self.trackerVM.fetchData(date: selectedDate.formatted(date: .numeric, time: .omitted))
-                    }
-                
-                //replace with dynamic graphic
-                Image("ScoreGraphicPlaceholder")
-                    .resizable()
-                    .frame(width:350,height: 200)
-                    .padding()
-                
-                Text("My Sustainable Habits:")
-                    .font(.title3)
-                    .bold()
-                    .padding()
-                
-                ScrollView {
+        NavigationStack {
+            ZStack{
+                VStack{
+                    Text("Sustainability Tracker")
+                        .multilineTextAlignment(.leading)
+                        .font(.title2)
+                        .bold()
+                        .padding()
                     
-                    
-                    //ForEach habit (loop through array with all habits)
-                    //displays habit tracker data
-                    ForEach( trackerVM.habits) { habit in
-                        //currUsesr
-                        if (habit.id == "sophia.k.fayer@vanderbilt.edu"){
-                            Text("Meatless Meals: " + habit.meatlessMeals)
-                                .font(.headline)
-                                .bold()
-                                .foregroundColor(.black)
-                                .frame(width: 300, height: 50)
-                                .background(.green)
-                                .cornerRadius(10)
-                                .padding(.bottom, 10)
-                            Text("Miles Driven: " + habit.milesDriven)
-                                .font(.headline)
-                                .bold()
-                                .foregroundColor(.black)
-                                .frame(width: 300, height: 50)
-                                .background(.green)
-                                .cornerRadius(10)
-                                .padding(.bottom, 10)
-                        }
-                        
+                    //replace with weekly calendar view and monthly view at top
+                    DatePicker("Select Date", selection: $selectedDate, in: ...Date(), displayedComponents: [.date])
+                            .datePickerStyle(.compact)
+                            .tint(.green)
+                        .padding(.horizontal)
+                        .onChange(of: selectedDate){
+                            newVal in
                             
+                                self.trackerVM.fetchHabitData(date: selectedDate.formatted(date: .numeric, time: .omitted))
+    //                        for habitType in habitTypes{
+    //                            self.trackerVM.fetchData(date: selectedDate.formatted(date: .numeric, time: .omitted), habitType: habitType)
+    //                        }
+    //                        self.trackerVM.fetchData(date: selectedDate.formatted(date: .numeric, time: .omitted))
+                        }
+                    
+                    //replace with dynamic graphic
+                    Image("ScoreGraphicPlaceholder")
+                        .resizable()
+                        .frame(width:350,height: 200)
+                        .padding()
+                    
+                    HStack {
+                        Text("My Sustainable Habits")
+                            .font(.title3)
+                            .bold()
+                            .padding()
+                        
+                        NavigationLink{
+                            DummyLogView()
+                        }
+                    label: {
+                        Image(systemName:"plus")
+                    }
+                    .font(.headline)
+                    .bold()
+                    //.frame(width: 55, height: 40)
+                    .foregroundColor(.green)
+                    //.background(.green)
+                    //.cornerRadius(30)
+                        
+                    }
+                    
+                    ScrollView {
+                        
+                        
+                        //ForEach habit (loop through array with all habits)
+                        //displays habit tracker data
+                        ForEach( trackerVM.habits) { habit in
+                            //currUsesr
+                            if (habit.id == "sophia.k.fayer@vanderbilt.edu"){
+                                Text("Meatless Meals: " + habit.meatlessMeals)
+                                    .font(.headline)
+                                    .bold()
+                                    .foregroundColor(.black)
+                                    .frame(width: 300, height: 50)
+                                    .background(.green)
+                                    .cornerRadius(10)
+                                    .padding(.bottom, 10)
+                                Text("Miles Driven: " + habit.milesDriven)
+                                    .font(.headline)
+                                    .bold()
+                                    .foregroundColor(.black)
+                                    .frame(width: 300, height: 50)
+                                    .background(.green)
+                                    .cornerRadius(10)
+                                    .padding(.bottom, 10)
+                            }
+                            
+                                
+                            }
                         }
                     }
+                    
                 }
-                
+                .onAppear(){
+                    
+    //                for habitType in habitTypes{
+    //                    self.trackerVM.fetchHabitData( date: selectedDate.formatted(date: .numeric, time: .omitted))
+    //                }
+                    self.trackerVM.fetchHabitData( date: selectedDate.formatted(date: .numeric, time: .omitted))
             }
-            .onAppear(){
-                
-//                for habitType in habitTypes{
-//                    self.trackerVM.fetchHabitData( date: selectedDate.formatted(date: .numeric, time: .omitted))
-//                }
-                self.trackerVM.fetchHabitData( date: selectedDate.formatted(date: .numeric, time: .omitted))
-            }
+        }
 //            .onChange(of: selectedDate){
 //                    self.trackerVM.fetchData( date: selectedDate.formatted(date: .numeric, time: .omitted), habitType: "meatlessMeals")
 //
@@ -304,6 +322,43 @@ struct TrackerView: View {
 //    
 //}
 
+
+struct DummyLogView: View {
+    
+    var body: some View {
+        VStack {
+            Text("Log page here")
+            
+//            HStack {
+//                Text("Have \(meatlessMeals) Meals without Meat")
+//                    .frame(width:150)
+//                    .multilineTextAlignment(.center)
+//                
+//                VStack {
+//                    Slider(
+//                        value: $meatlessMeals,
+//                        in: 0...3,
+//                        step: 1
+//                    ) {
+//                        Text("Meals without Meat")
+//                    } minimumValueLabel: {
+//                        Text("0")
+//                    } maximumValueLabel: {
+//                        Text("3")
+//                        //                    } onEditingChanged: { editing in
+//                        //                        isEditingMeat = editing
+//                        //                    }
+//                        //                        Text("\(mealsWithMeat)")
+//                        //                            .foregroundColor(isEditingMeat ? .gray : .green)
+//                    }
+//                    .frame(width: 200)
+//                }
+//            }
+//            .padding()
+        }
+    }
+
+}
 
 
 #Preview {
