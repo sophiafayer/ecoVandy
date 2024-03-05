@@ -19,6 +19,7 @@ struct Habit: Identifiable, Equatable {
     var milesDriven: String
 }
 
+//add checks and balances - if date
 class TrackerViewModel: ObservableObject{
     
     @Published var habits = [Habit]()
