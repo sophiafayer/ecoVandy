@@ -9,14 +9,10 @@ import SwiftUI
 
 
 struct TipView: View {
-    
-    var category = "food"
-    var imageName = ""
+    @ObservedObject var viewModel = TipViewModel()
     
     var body: some View {
-        ZStack{
-            Color("LightGreen")
-                .ignoresSafeArea()
+        let tip = viewModel.sustainableTip
             VStack{
                 Text("Sustainable Tip of the Day!")
                     .font(.title)
@@ -24,17 +20,26 @@ struct TipView: View {
                     .bold()
                     .padding(.bottom, 5)
                     .padding(.top, 20)
-                Text(getTodaysDate())
+                Text(viewModel.date)
                     .font(.title2)
                     .foregroundColor(Color("DarkGreen"))
                     .padding(.bottom, 30)
-                Image(systemName: "carrot")
-                    .font(.largeTitle)
-                    .foregroundColor(Color("DarkGreen"))
-                Text("Visit Your Local Farmer's Market!")
-                    .font(.title3)
-                    .frame(width: 330, height: 100)
-                    .foregroundColor(Color("DarkGreen"))
+                ZStack{
+                    Rectangle()
+                        .frame(width:370, height: 150)
+                        .foregroundColor(Color("LightGreen"))
+                        .cornerRadius(20)
+                    VStack{
+                        Image(systemName: viewModel.imageName)
+                            .font(.largeTitle)
+                            .foregroundColor(Color("DarkGreen"))
+                        Text(tip?.tip ?? "")
+                            .font(.title3)
+                            .frame(width: 330, height: 50)
+                            .foregroundColor(Color("DarkGreen"))
+                    }
+                }
+                .padding(.bottom, 30)
                 HStack{
                     Text("Why?")
                         .bold()
@@ -45,68 +50,30 @@ struct TipView: View {
                         .padding (.top, 10)
                     Spacer()
                 }
-
-                Text("Support small businesses & get fresh groceries all while helping reduce transportation emissions by shopping local")
+                Text(tip?.explanation ?? "")
                     .font(.title3)
-                    .padding(.top, 10)
-                    .frame(width: 300, height: 125)
+                    .padding(.top, 5)
+                    .frame(width: 300, height: 150)
                     .foregroundColor(Color("DarkGreen"))
                 Spacer()
+            }
+            .onAppear(){
+                Task{
+                    do{
+                        try await viewModel.loadTip()
+                        viewModel.getTodaysDate()
+                    }
+                    catch
+                    {
+                        print("Error loading tip :\(error.localizedDescription)")
+                    }
+                }
                 
             }
         }
-    }
     
-    // getting the current date
-    func getTodaysDate() -> String{
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM d'\(daySuffix(from: Date()))', yyyy"
-        return dateFormatter.string(from: Date())
-    }
-    
-    private func daySuffix(from date: Date) -> String {
-            let calendar = Calendar.current
-            let dayOfMonth = calendar.component(.day, from: date)
-            
-            switch dayOfMonth {
-            case 1, 21, 31: return "st"
-            case 2, 22: return "nd"
-            case 3, 23: return "rd"
-            default: return "th"
-            }
-    }
-    
-    mutating func getIcon() -> String {
-        if(category == "food")
-        {
-            imageName = "carrot"
-        }
-        else if (category == "water")
-        {
-            imageName = "drop"
-        }
-        else if (category == "reusable")
-        {
-            imageName = "arrow.3.trianglepath"
-        }
-        else if (category == "energy")
-        {
-            imageName = "lightbulb.max"
-        }
-        else if (category == "education"){
-            imageName = "list.bullet.clipboard"
-        }
-        else {
-            //imageName =
-        }
-        
-        return imageName
-    }
-    // Randomize the icons based on the categories)
-    // Randomize the tips
-    //
-    
-    
+
+
 }
 
 #Preview {
