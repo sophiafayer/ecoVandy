@@ -11,6 +11,8 @@ import FirebaseFirestore
 
 struct ProfileView: View {
     
+    @ObservedObject var viewModel = ViewModel()
+    
     var body: some View {
         VStack{
             // name
@@ -18,7 +20,6 @@ struct ProfileView: View {
                 .font(.largeTitle)
                 .bold()
                 .padding(.top, 10)
-                .foregroundColor(Color("DarkGreen"))
                 .padding(.bottom, 5)
             // icon
             Image(systemName: "waterbottle")
@@ -38,7 +39,7 @@ struct ProfileView: View {
                         .padding(.bottom, 20)
                         .foregroundColor(Color("DarkGreen"))
                         .bold()
-                    Text("Grade")
+                    Text("Year")
                         .font(.title3)
                         .bold()
                     Text("Senior")

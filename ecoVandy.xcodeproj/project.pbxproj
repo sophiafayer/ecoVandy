@@ -13,6 +13,7 @@
 		0E3ABA772B96321B00DC5AFF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3ABA762B96321B00DC5AFF /* ProfileView.swift */; };
 		0ED14D5E2B924EC00051533E /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED14D5D2B924EC00051533E /* TipView.swift */; };
 		0ED14D622B92755C0051533E /* Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED14D612B92755C0051533E /* Styling.swift */; };
+		0EF014472B96651D00170122 /* TipManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF014462B96651D00170122 /* TipManager.swift */; };
 		7119FED62B8D246D00203D66 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7119FED52B8D246D00203D66 /* FirebaseAnalytics */; };
 		7119FED82B8D246D00203D66 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 7119FED72B8D246D00203D66 /* FirebaseAnalyticsOnDeviceConversion */; };
 		7119FEDA2B8D246D00203D66 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7119FED92B8D246D00203D66 /* FirebaseAnalyticsSwift */; };
@@ -86,6 +87,7 @@
 		0E3ABA762B96321B00DC5AFF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0ED14D5D2B924EC00051533E /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
 		0ED14D612B92755C0051533E /* Styling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styling.swift; sourceTree = "<group>"; };
+		0EF014462B96651D00170122 /* TipManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipManager.swift; sourceTree = "<group>"; };
 		7119FF0B2B8D350200203D66 /* TrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerView.swift; sourceTree = "<group>"; };
 		7147C03A2B964EA80015DB07 /* ViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewManager.swift; sourceTree = "<group>"; };
 		716134992B91473F007AF44E /* TrackerViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewManager.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				B1E2D4FA2B91481B0098B9A2 /* LoadingView.swift */,
 				716134992B91473F007AF44E /* TrackerViewManager.swift */,
 				7147C03A2B964EA80015DB07 /* ViewManager.swift */,
+				0EF014462B96651D00170122 /* TipManager.swift */,
 			);
 			path = ecoVandy;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EF014472B96651D00170122 /* TipManager.swift in Sources */,
 				B17DAE1F2B8E633F002FEA6E /* NotificationManager.swift in Sources */,
 				0E3ABA772B96321B00DC5AFF /* ProfileView.swift in Sources */,
 				718F11D22B86A791001EEB89 /* HomeView.swift in Sources */,
