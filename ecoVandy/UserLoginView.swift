@@ -37,6 +37,12 @@ struct Login: View {
         case .signedOut:
                     //Displays the login button
                     VStack(spacing: 30) {
+                        Section{
+                            Image("ecoVandy")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 150, height: 150)
+                        }
                         //Launches the signIn() function when the button is pressed,
                         // which allows the user to sign in with Google
                         Button(action: {
