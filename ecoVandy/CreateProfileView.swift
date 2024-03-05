@@ -27,6 +27,19 @@ struct CreateProfileView: View {
         return email.isEmpty ? 1 : 0
     }
 
+    // Set to value, but it will get changed
+    enum Grade: String, CaseIterable, Identifiable {
+        case freshman, sophomore, junior, senior
+        var id: Self { self }
+    }
+    @State private var grade: Grade = .freshman
+    
+    @State private var onCampus: OnCampus = .yes
+    enum OnCampus: String, CaseIterable, Identifiable {
+        case yes, no
+        var id: Self { self }
+    }
+
     
     var body: some View {
         ZStack{
@@ -51,7 +64,7 @@ struct CreateProfileView: View {
                             .padding([.trailing], -135)
                             .opacity(firstNameOpacity)
                             .foregroundColor(Color(UIColor.darkGray))
-                        // store the entered text in the eventTitle variable
+                        // store the entered text in the  variable
                         TextField(
                             "",
                             text: $firstName)
@@ -69,7 +82,7 @@ struct CreateProfileView: View {
                             .padding([.trailing], -135)
                             .opacity(lastNameOpacity)
                             .foregroundColor(Color(UIColor.darkGray))
-                        // store the entered text in the eventTitle variable
+                        // store the entered text in the  variable
                         TextField(
                             "",
                             text: $lastName)
@@ -87,10 +100,44 @@ struct CreateProfileView: View {
                             .padding([.trailing], -135)
                             .opacity(emailOpacity)
                             .foregroundColor(Color(UIColor.darkGray))
-                        // store the entered text in the eventTitle variable
+                        // store the entered text in the  variable
                         TextField(
                             "",
                             text: $email)
+                    }
+                    .background(Color(#colorLiteral(red: 0.5, green: 0.8901960849761963, blue: 0, alpha: 1)))
+                    .cornerRadius(5)
+                    .frame(width: 325)
+                }
+                Section{
+                    HStack{
+                        Text("Grade:")
+                            .padding([.leading], 6)
+                            .padding([.top, .bottom], 5)
+                            .foregroundColor(Color(UIColor.darkGray))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        Picker("grade:", selection: $grade) {
+                            Text("Freshman").tag(Grade.freshman)
+                            Text("Sophomore").tag(Grade.sophomore)
+                            Text("Junior").tag(Grade.junior)
+                            Text("Senior").tag(Grade.senior)
+                        }
+                    }
+                    .background(Color(#colorLiteral(red: 0.5, green: 0.8901960849761963, blue: 0, alpha: 1)))
+                    .cornerRadius(5)
+                    .frame(width: 325)
+                }
+                Section{
+                    HStack{
+                        Text("On Campus:")
+                            .padding([.leading], 6)
+                            .padding([.top, .bottom], 5)
+                            .foregroundColor(Color(UIColor.darkGray))
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        Picker("On Campus:", selection: $onCampus) {
+                            Text("Yes").tag(OnCampus.yes)
+                            Text("No").tag(OnCampus.no)
+                        }
                     }
                     .background(Color(#colorLiteral(red: 0.5, green: 0.8901960849761963, blue: 0, alpha: 1)))
                     .cornerRadius(5)
@@ -119,12 +166,16 @@ struct CreateProfileView: View {
     }
     func saveProfileToFirebase(){
         let db = Firestore.firestore()
+        let userGrade = grade.rawValue
+        
         let userRef = db.collection("users").document(accountEmail)
         userRef.updateData([
             "email": email,
             "firstName": firstName,
             "firstSignIn": false,
             "lastName": lastName,
+            "onCampus": onCampus == OnCampus.yes ? true : false,
+            "year": userGrade
         ]) { err in
             if let err = err {
                 print("Error updating document: \(err)")
