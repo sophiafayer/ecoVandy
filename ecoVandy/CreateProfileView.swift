@@ -63,13 +63,13 @@ struct CreateProfileView: View {
                             .padding([.top, .bottom], 5)
                             .padding([.trailing], -135)
                             .opacity(firstNameOpacity)
-                            .foregroundColor(Color(UIColor.darkGray))
+                            .foregroundColor(Color("DarkGreen"))
                         // store the entered text in the  variable
                         TextField(
                             "",
                             text: $firstName)
                     }
-                    .background(Color(#colorLiteral(red: 0.5, green: 0.8901960849761963, blue: 0, alpha: 1)))
+                    .background(Color("LightGreen"))
                     .cornerRadius(5)
                     .frame(width: 325)
                 }
@@ -81,13 +81,13 @@ struct CreateProfileView: View {
                             .padding([.top, .bottom], 5)
                             .padding([.trailing], -135)
                             .opacity(lastNameOpacity)
-                            .foregroundColor(Color(UIColor.darkGray))
+                            .foregroundColor(Color("DarkGreen"))
                         // store the entered text in the  variable
                         TextField(
                             "",
                             text: $lastName)
                     }
-                    .background(Color(#colorLiteral(red: 0.5, green: 0.8901960849761963, blue: 0, alpha: 1)))
+                    .background(Color("LightGreen"))
                     .cornerRadius(5)
                     .frame(width: 325)
                 }
@@ -99,13 +99,13 @@ struct CreateProfileView: View {
                             .padding([.top, .bottom], 5)
                             .padding([.trailing], -135)
                             .opacity(emailOpacity)
-                            .foregroundColor(Color(UIColor.darkGray))
+                            .foregroundColor(Color("DarkGreen"))
                         // store the entered text in the  variable
                         TextField(
                             "",
                             text: $email)
                     }
-                    .background(Color(#colorLiteral(red: 0.5, green: 0.8901960849761963, blue: 0, alpha: 1)))
+                    .background(Color("LightGreen"))
                     .cornerRadius(5)
                     .frame(width: 325)
                 }
@@ -114,7 +114,7 @@ struct CreateProfileView: View {
                         Text("Grade:")
                             .padding([.leading], 6)
                             .padding([.top, .bottom], 5)
-                            .foregroundColor(Color(UIColor.darkGray))
+                            .foregroundColor(Color("DarkGreen"))
                             .frame(maxWidth: .infinity, alignment: .leading)
                         Picker("grade:", selection: $grade) {
                             Text("Freshman").tag(Grade.freshman)
@@ -123,7 +123,7 @@ struct CreateProfileView: View {
                             Text("Senior").tag(Grade.senior)
                         }
                     }
-                    .background(Color(#colorLiteral(red: 0.5, green: 0.8901960849761963, blue: 0, alpha: 1)))
+                    .background(Color("LightGreen"))
                     .cornerRadius(5)
                     .frame(width: 325)
                 }
@@ -132,14 +132,14 @@ struct CreateProfileView: View {
                         Text("On Campus:")
                             .padding([.leading], 6)
                             .padding([.top, .bottom], 5)
-                            .foregroundColor(Color(UIColor.darkGray))
+                            .foregroundColor(Color("DarkGreen"))
                             .frame(maxWidth: .infinity, alignment: .leading)
                         Picker("On Campus:", selection: $onCampus) {
                             Text("Yes").tag(OnCampus.yes)
                             Text("No").tag(OnCampus.no)
                         }
                     }
-                    .background(Color(#colorLiteral(red: 0.5, green: 0.8901960849761963, blue: 0, alpha: 1)))
+                    .background(Color("LightGreen"))
                     .cornerRadius(5)
                     .frame(width: 325)
                 }
