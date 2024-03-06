@@ -69,7 +69,7 @@ final class UserViewModel: ObservableObject{
             onOff = "On"
         }
         
-        name = (user?.firstName ?? "") + "" + (user?.lastName ?? "")
+        name = (user?.firstName ?? "") + " " + (user?.lastName ?? "")
     }
 
 }
