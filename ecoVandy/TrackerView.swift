@@ -10,8 +10,8 @@ import SwiftUI
 struct TrackerView: View {
     @State var selectedDate = Date()
     
-    //change to Caroline's
     @ObservedObject var trackerVM = TrackerViewModel()
+
     
     //@State var habitTypes = ["meatlessMeals", "milesDriven"] //, "bottlesUsed"]
     
@@ -28,7 +28,7 @@ struct TrackerView: View {
                     //replace with weekly calendar view and monthly view at top
                     DatePicker("Select Date", selection: $selectedDate, in: ...Date(), displayedComponents: [.date])
                             .datePickerStyle(.compact)
-                            .tint(.green)
+                            .tint(Color("DarkGreen"))
                         .padding(.horizontal)
                         .onChange(of: selectedDate){
                             newVal in
@@ -53,18 +53,17 @@ struct TrackerView: View {
                             .padding()
                         
                         NavigationLink{
-                            DummyLogView()
+                            DummyLogView(date: selectedDate.formatted(date: .complete, time: .omitted))
                         }
                     label: {
                         Image(systemName:"plus")
+                            .resizable()
+                            .frame(width:25, height: 25)
                     }
                     .font(.headline)
                     .bold()
-                    //.frame(width: 55, height: 40)
-                    .foregroundColor(.green)
-                    //.background(.green)
-                    //.cornerRadius(30)
-                        
+                    .foregroundColor(Color("DarkGreen"))
+                    .tint(Color("DarkGreen"))
                     }
                     
                     ScrollView {
@@ -78,17 +77,25 @@ struct TrackerView: View {
                                 Text("Meatless Meals: " + habit.meatlessMeals)
                                     .font(.headline)
                                     .bold()
-                                    .foregroundColor(.black)
+                                    .foregroundColor(Color("DarkGreen"))
                                     .frame(width: 300, height: 50)
-                                    .background(.green)
+                                    .background(Color("LightGreen"))
                                     .cornerRadius(10)
                                     .padding(.bottom, 10)
                                 Text("Miles Driven: " + habit.milesDriven)
                                     .font(.headline)
                                     .bold()
-                                    .foregroundColor(.black)
+                                    .foregroundColor(Color("DarkGreen"))
                                     .frame(width: 300, height: 50)
-                                    .background(.green)
+                                    .background(Color("LightGreen"))
+                                    .cornerRadius(10)
+                                    .padding(.bottom, 10)
+                                Text("Plastic Waterbottles: " + habit.plasticBottles)
+                                    .font(.headline)
+                                    .bold()
+                                    .foregroundColor(Color("DarkGreen"))
+                                    .frame(width: 300, height: 50)
+                                    .background(Color("LightGreen"))
                                     .cornerRadius(10)
                                     .padding(.bottom, 10)
                             }
@@ -325,36 +332,54 @@ struct TrackerView: View {
 
 struct DummyLogView: View {
     
+    @ObservedObject var trackerVM = TrackerViewModel()
+    
+    @State var date = ""
+    @State var meatlessMeals = 0.0
+    //add other habits here
+    
+    
     var body: some View {
-        VStack {
-            Text("Log page here")
-            
-//            HStack {
-//                Text("Have \(meatlessMeals) Meals without Meat")
-//                    .frame(width:150)
-//                    .multilineTextAlignment(.center)
-//                
-//                VStack {
-//                    Slider(
-//                        value: $meatlessMeals,
-//                        in: 0...3,
-//                        step: 1
-//                    ) {
-//                        Text("Meals without Meat")
-//                    } minimumValueLabel: {
-//                        Text("0")
-//                    } maximumValueLabel: {
-//                        Text("3")
-//                        //                    } onEditingChanged: { editing in
-//                        //                        isEditingMeat = editing
-//                        //                    }
-//                        //                        Text("\(mealsWithMeat)")
-//                        //                            .foregroundColor(isEditingMeat ? .gray : .green)
-//                    }
-//                    .frame(width: 200)
-//                }
-//            }
-//            .padding()
+        ScrollView {
+            VStack {
+                Text(date)
+                    .font(.title2)
+                    .bold()
+                    .padding()
+                Text("Track today's habits")
+                    .font(.title3)
+                    .bold()
+                    .padding()
+                Text("Today I...")
+                    .padding()
+                
+                HStack {
+                    Text("Had \(String(round(meatlessMeals).rounded(.toNearestOrEven))) Meals without Meat")
+                        .frame(width:150)
+                        .multilineTextAlignment(.center)
+                    
+                    VStack {
+                        Slider(
+                            value: $meatlessMeals,
+                            in: 0...3,
+                            step: 1
+                        ) {
+                            Text("Meals without Meat")
+                        } minimumValueLabel: {
+                            Text("0")
+                        } maximumValueLabel: {
+                            Text("3")
+                            //                    } onEditingChanged: { editing in
+                            //                        isEditingMeat = editing
+                            //                    }
+                            //                        Text("\(mealsWithMeat)")
+                            //                            .foregroundColor(isEditingMeat ? .gray : .green)
+                        }
+                        .frame(width: 200)
+                    }
+                }
+                .padding()
+            }
         }
     }
 
