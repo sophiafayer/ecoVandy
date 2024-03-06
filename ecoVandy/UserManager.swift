@@ -54,6 +54,7 @@ final class UserManager{
 final class UserViewModel: ObservableObject{
     @Published private(set) var user: DBUser?
     @Published var onOff = ""
+    @Published var name = ""
     
     // add some error functionality into this
     func loadCurrentUser() async throws {
@@ -67,6 +68,8 @@ final class UserViewModel: ObservableObject{
         }else {
             onOff = "On"
         }
+        
+        name = (user?.firstName ?? "") + "" + (user?.lastName ?? "")
     }
 
 }

@@ -10,19 +10,21 @@ import Firebase
 import FirebaseFirestore
 
 struct ProfileView: View {
+    
     @StateObject private var viewModel = UserViewModel()
+
     
     var body: some View {
         let user = viewModel.user
         VStack{
             // name
-            Text("Sydney Leonardi")
+            Text(viewModel.name)
                 .font(.largeTitle)
                 .bold()
                 .padding(.top, 10)
                 .padding(.bottom, 5)
             // icon
-            Image(systemName: "waterbottle")
+            Image(systemName: "tree")
                 .foregroundColor(Color("DarkGreen"))
                 .bold()
                 .font(.title)
