@@ -17,6 +17,7 @@ struct Habit: Identifiable, Equatable {
     var date: String
     var meatlessMeals: String
     var milesDriven: String
+    var plasticBottles: String
 }
 
 //add checks and balances - if date
@@ -42,11 +43,13 @@ class TrackerViewModel: ObservableObject{
             let meatlessMealsData = data["meatlessMeals"] as? [String: String],
             let meatlessMealsVal = meatlessMealsData[date],
             let milesDrivenData = data["milesDriven"] as? [String: String],
-            let milesDrivenVal = milesDrivenData[date] {
-                let habit = Habit(id: userID.lowercased(), name: name, date: date, meatlessMeals: meatlessMealsVal, milesDriven: milesDrivenVal)
+            let milesDrivenVal = milesDrivenData[date],
+            let bottlesUsedData = data["plasticBottles"] as? [String: String],
+            let bottlesUsedVal = bottlesUsedData[date]{
+                let habit = Habit(id: userID.lowercased(), name: name, date: date, meatlessMeals: meatlessMealsVal, milesDriven: milesDrivenVal, plasticBottles: bottlesUsedVal)
             return habit
             }else{
-                return Habit(id: "NA", name: "NA", date: "NA", meatlessMeals: "NA", milesDriven: "NA")
+                return Habit(id: "NA", name: "NA", date: "NA", meatlessMeals: "NA", milesDriven: "NA", plasticBottles: "NA")
             }
             }
         }
