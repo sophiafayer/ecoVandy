@@ -42,7 +42,7 @@
 		7119FF082B8D246D00203D66 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 7119FF072B8D246D00203D66 /* FirebaseStorage */; };
 		7119FF0A2B8D246D00203D66 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 7119FF092B8D246D00203D66 /* FirebaseStorageCombine-Community */; };
 		7119FF0C2B8D350200203D66 /* TrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7119FF0B2B8D350200203D66 /* TrackerView.swift */; };
-		7147C03B2B964EA80015DB07 /* ViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7147C03A2B964EA80015DB07 /* ViewManager.swift */; };
+		7147C03B2B964EA80015DB07 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7147C03A2B964EA80015DB07 /* UserManager.swift */; };
 		7161349A2B91473F007AF44E /* TrackerViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 716134992B91473F007AF44E /* TrackerViewManager.swift */; };
 		718F11D22B86A791001EEB89 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718F11D12B86A791001EEB89 /* HomeView.swift */; };
 		71BABD322B7D554E00904695 /* ecoVandyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BABD312B7D554E00904695 /* ecoVandyApp.swift */; };
@@ -89,7 +89,7 @@
 		0ED14D612B92755C0051533E /* Styling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styling.swift; sourceTree = "<group>"; };
 		0EF014462B96651D00170122 /* TipManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipManager.swift; sourceTree = "<group>"; };
 		7119FF0B2B8D350200203D66 /* TrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerView.swift; sourceTree = "<group>"; };
-		7147C03A2B964EA80015DB07 /* ViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewManager.swift; sourceTree = "<group>"; };
+		7147C03A2B964EA80015DB07 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		716134992B91473F007AF44E /* TrackerViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerViewManager.swift; sourceTree = "<group>"; };
 		718F11D12B86A791001EEB89 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		71BABD2E2B7D554E00904695 /* ecoVandy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ecoVandy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,7 +208,7 @@
 				B1BFED122B90E06F006EC0B7 /* CreateProfileView.swift */,
 				B1E2D4FA2B91481B0098B9A2 /* LoadingView.swift */,
 				716134992B91473F007AF44E /* TrackerViewManager.swift */,
-				7147C03A2B964EA80015DB07 /* ViewManager.swift */,
+				7147C03A2B964EA80015DB07 /* UserManager.swift */,
 				0EF014462B96651D00170122 /* TipManager.swift */,
 			);
 			path = ecoVandy;
@@ -416,7 +416,7 @@
 				7161349A2B91473F007AF44E /* TrackerViewManager.swift in Sources */,
 				B1BFED132B90E06F006EC0B7 /* CreateProfileView.swift in Sources */,
 				0ED14D622B92755C0051533E /* Styling.swift in Sources */,
-				7147C03B2B964EA80015DB07 /* ViewManager.swift in Sources */,
+				7147C03B2B964EA80015DB07 /* UserManager.swift in Sources */,
 				B1B85D3F2B8EA42B0019E602 /* UserLoginView.swift in Sources */,
 				71BABD342B7D554E00904695 /* ContentView.swift in Sources */,
 				71BABD322B7D554E00904695 /* ecoVandyApp.swift in Sources */,
