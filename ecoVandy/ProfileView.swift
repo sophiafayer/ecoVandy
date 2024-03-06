@@ -10,10 +10,10 @@ import Firebase
 import FirebaseFirestore
 
 struct ProfileView: View {
-    
-    @ObservedObject var viewModel = ViewModel()
+    @StateObject private var viewModel = UserViewModel()
     
     var body: some View {
+        let user = viewModel.user
         VStack{
             // name
             Text("Sydney Leonardi")
@@ -32,7 +32,7 @@ struct ProfileView: View {
                     Text("Email")
                         .font(.title3)
                         .bold()
-                    Text("sydney.j.leonardi@vanderbilt.edu")
+                    Text(user?.email ?? "")
                         .frame(width:340, height: 50)
                         .background(Color("LightGreen"))
                         .cornerRadius(20)
@@ -42,7 +42,7 @@ struct ProfileView: View {
                     Text("Year")
                         .font(.title3)
                         .bold()
-                    Text("Senior")
+                    Text(user?.year ?? "")
                         .frame(width:340, height: 50)
                         .background(Color("LightGreen"))
                         .cornerRadius(20)
@@ -52,7 +52,7 @@ struct ProfileView: View {
                     Text("On/Off Campus")
                         .font(.title3)
                         .bold()
-                    Text("Off")
+                    Text(viewModel.onOff)
                         .frame(width:340, height: 50)
                         .background(Color("LightGreen"))
                         .cornerRadius(20)
@@ -65,6 +65,16 @@ struct ProfileView: View {
             }
             Spacer()
             
+        }
+        .onAppear(){
+            Task{
+                do{
+                    try await viewModel.loadCurrentUser()
+                }catch{
+                    print("There is an error :\(error.localizedDescription)")
+                }
+                
+            }
         }
 }
     
