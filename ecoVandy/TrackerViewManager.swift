@@ -17,7 +17,11 @@ struct Habit: Identifiable, Equatable {
     var date: String
     var meatlessMeals: String
     var milesDriven: String
+    var paperUsed: String
     var plasticBottles: String
+    var recycledItems: String
+    var showerLength: String
+    var singleUseItems: String
 }
 
 //add checks and balances - if date
@@ -45,58 +49,58 @@ class TrackerViewModel: ObservableObject{
                    let meatlessMealsVal = meatlessMealsData[date],
                    let milesDrivenData = data["milesDriven"] as? [String: String],
                    let milesDrivenVal = milesDrivenData[date],
-                   let bottlesUsedData = data["plasticBottles"] as? [String: String],
-                   let bottlesUsedVal = bottlesUsedData[date]{
-                    let habit = Habit(id: userID.lowercased(), name: firstName+lastName, date: date, meatlessMeals: meatlessMealsVal, milesDriven: milesDrivenVal, plasticBottles: bottlesUsedVal)
+                   let paperUsedData = data["paperUsed"] as? [String: String],
+                   let paperUsedVal = paperUsedData[date],
+                   let plasticBottlesData = data["plasticBottles"] as? [String: String],
+                   let plasticBottlesVal = plasticBottlesData[date],
+                   let recycledItemsData = data["recycledItems"] as? [String: String],
+                   let recycledItemsVal = recycledItemsData[date],
+                   let showerLengthData = data["showerLength"] as? [String: String],
+                   let showerLengthVal = showerLengthData[date],
+                   let singleUseItemsData = data["singleUseItems"] as? [String: String],
+                   let singleUseItemsVal = singleUseItemsData[date]
+                    
+                {
+                    let habit = Habit(id: userID.lowercased(), name: firstName+lastName, date: date, meatlessMeals: meatlessMealsVal, milesDriven: milesDrivenVal, paperUsed: paperUsedVal, plasticBottles: plasticBottlesVal, recycledItems: recycledItemsVal, showerLength: showerLengthVal, singleUseItems: singleUseItemsVal)
                     return habit
                 }else{
-                    return Habit(id: "NA", name: "NA", date: "NA", meatlessMeals: "NA", milesDriven: "NA", plasticBottles: "NA")
+                    return Habit(id: "NA", name: "NA", date: "NA", meatlessMeals: "NA", milesDriven: "NA", paperUsed: "NA", plasticBottles: "NA", recycledItems: "NA", showerLength: "NA", singleUseItems: "NA")
                 }
             }
         }
     }
     
-    func updateHabitData(date: String, id: String, meatlessMeals: String, milesDriven: String, plasticBottles: String) {
+    func updateHabitData(date: String, id: String, meatlessMeals: String, milesDriven: String, paperUsed: String, plasticBottles: String, recycledItems: String, showerLength: String, singleUseItems: String) {
         
         let habitData1: [String: Any] = ["meatlessMeals": [date: meatlessMeals]]
         
         db.collection("users").document(id).setData(habitData1, merge: true)
         
+        
         let habitData2: [String: Any] = ["milesDriven": [date: milesDriven]]
         
         db.collection("users").document(id).setData(habitData2, merge: true)
         
-        let habitData3: [String: Any] = ["plasticBottles": [date: plasticBottles]]
+        let habitData3: [String: Any] = ["paperUsed": [date: paperUsed]]
         
         db.collection("users").document(id).setData(habitData3, merge: true)
+        
+        let habitData4: [String: Any] = ["plasticBottles": [date: plasticBottles]]
+        
+        db.collection("users").document(id).setData(habitData4, merge: true)
+        
+        let habitData5: [String: Any] = ["recycledItems": [date: recycledItems]]
+        
+        db.collection("users").document(id).setData(habitData5, merge: true)
+        
+        let habitData6: [String: Any] = ["showerLength": [date: showerLength]]
+        
+        db.collection("users").document(id).setData(habitData6, merge: true)
+        
+        let habitData7: [String: Any] = ["singleUseItems": [date: singleUseItems]]
+        
+        db.collection("users").document(id).setData(habitData7, merge: true)
     }
-
-        //                db.collection("users").document(userID).set(
-        //                    {habit: {date: habitVal}},
-        //                    {merge: true}
-        
-                
-                //        let docRef = db.collection("users").document(userID)
-                //
-                //        docRef.getDocument { (document, error) in
-                //            if let document = document, document.exists {
-                //                let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
-                //                print("Document data: \(dataDescription)")
-                //            } else {
-                //                print("Document does not exist")
-                //            }
-                //        }
-            }
-        
-        //        {error in
-        //            if let error = error{
-        //                print("Error updating document :\(error)") //handle db writing error
-        //            }
-        //            else{
-        //                print("updated document") //successful write to db
-        //            }
-        //        }
-        //   }
-        
-
-
+    
+    
+}

@@ -103,7 +103,39 @@ struct TrackerView: View {
                                     .background(Color("LightGreen"))
                                     .cornerRadius(10)
                                     .padding(.bottom, 10)
+                                Text("Paper User: " + habit.paperUsed)
+                                    .font(.headline)
+                                    .bold()
+                                    .foregroundColor(Color("DarkGreen"))
+                                    .frame(width: 300, height: 50)
+                                    .background(Color("LightGreen"))
+                                    .cornerRadius(10)
+                                    .padding(.bottom, 10)
                                 Text("Plastic Waterbottles: " + habit.plasticBottles)
+                                    .font(.headline)
+                                    .bold()
+                                    .foregroundColor(Color("DarkGreen"))
+                                    .frame(width: 300, height: 50)
+                                    .background(Color("LightGreen"))
+                                    .cornerRadius(10)
+                                    .padding(.bottom, 10)
+                                Text("Recycled Items: " + habit.recycledItems)
+                                    .font(.headline)
+                                    .bold()
+                                    .foregroundColor(Color("DarkGreen"))
+                                    .frame(width: 300, height: 50)
+                                    .background(Color("LightGreen"))
+                                    .cornerRadius(10)
+                                    .padding(.bottom, 10)
+                                Text("Shower Length: " + habit.showerLength)
+                                    .font(.headline)
+                                    .bold()
+                                    .foregroundColor(Color("DarkGreen"))
+                                    .frame(width: 300, height: 50)
+                                    .background(Color("LightGreen"))
+                                    .cornerRadius(10)
+                                    .padding(.bottom, 10)
+                                Text("Single Use Items: " + habit.singleUseItems)
                                     .font(.headline)
                                     .bold()
                                     .foregroundColor(Color("DarkGreen"))
@@ -140,7 +172,11 @@ struct LogView: View {
     @State var date = ""
     @State var meatlessMeals = 0
     @State var milesDriven = 0
+    @State var paperUsed = 0
     @State var plasticBottles = 0
+    @State var recycledItems = 0
+    @State var showerLength = 0
+    @State var singleUseItems = 0
     //add other habits here
     
     
@@ -219,6 +255,35 @@ struct LogView: View {
                         .overlay( /// apply a rounded border
                             RoundedRectangle(cornerRadius: 20)
                                 .strokeBorder(Color("DarkGreen"), lineWidth: 5))
+                        HStack {
+                            Text("Used \(paperUsed) Sheets of Paper")
+                                .frame(width:150)
+                                .multilineTextAlignment(.center)
+                            
+                            VStack {
+                                Slider(
+                                    value: .convert(from:$paperUsed),
+                                    in: 0...30,
+                                    step: 1
+                                ) {
+                                    Text("Sheets of Paper")
+                                } minimumValueLabel: {
+                                    Text("0")
+                                } maximumValueLabel: {
+                                    Text("30")
+                                }
+                                .padding()
+                                .frame(width: 200)
+                            }
+                        }
+                        .padding()
+                        .frame(width: 345,height:90)
+                        .background(Color("LightGreen"))
+                        .foregroundColor(Color("DarkGreen"))
+                        .cornerRadius(20) /// make the background rounded
+                        .overlay( /// apply a rounded border
+                            RoundedRectangle(cornerRadius: 20)
+                            .strokeBorder(Color("DarkGreen"), lineWidth: 5))
                         
                         HStack {
                             Text("Used \(plasticBottles) plastic bottles")
@@ -248,9 +313,96 @@ struct LogView: View {
                         .overlay( /// apply a rounded border
                             RoundedRectangle(cornerRadius: 20)
                                 .strokeBorder(Color("DarkGreen"), lineWidth: 5))
+                        HStack {
+                            Text("Recycled \(recycledItems) Items")
+                                .frame(width:150)
+                                .multilineTextAlignment(.center)
+                            
+                            VStack {
+                                Slider(
+                                    value: .convert(from:$recycledItems),
+                                    in: 0...10,
+                                    step: 1
+                                ) {
+                                    Text("RecycledItems")
+                                } minimumValueLabel: {
+                                    Text("0")
+                                } maximumValueLabel: {
+                                    Text("10")
+                                }
+                                .padding()
+                                .frame(width: 200)
+                            }
+                        }
+                        .padding()
+                        .frame(width: 345,height:90)
+                        .background(Color("LightGreen"))
+                        .foregroundColor(Color("DarkGreen"))
+                        .cornerRadius(20) /// make the background rounded
+                        .overlay( /// apply a rounded border
+                            RoundedRectangle(cornerRadius: 20)
+                            .strokeBorder(Color("DarkGreen"), lineWidth: 5))
+                        HStack {
+                            Text("Showered for \(showerLength) Minutes")
+                                .frame(width:150)
+                                .multilineTextAlignment(.center)
+                            
+                            VStack {
+                                Slider(
+                                    value: .convert(from:$showerLength),
+                                    in: 0...60,
+                                    step: 1
+                                ) {
+                                    Text("Shower Length")
+                                } minimumValueLabel: {
+                                    Text("0")
+                                } maximumValueLabel: {
+                                    Text("60")
+                                }
+                                .padding()
+                                .frame(width: 200)
+                            }
+                        }
+                        .padding()
+                        .frame(width: 345,height:90)
+                        .background(Color("LightGreen"))
+                        .foregroundColor(Color("DarkGreen"))
+                        .cornerRadius(20) /// make the background rounded
+                        .overlay( /// apply a rounded border
+                            RoundedRectangle(cornerRadius: 20)
+                            .strokeBorder(Color("DarkGreen"), lineWidth: 5))
+                        HStack {
+                            Text("Used \(singleUseItems) Single-Use Items")
+                                .frame(width:150)
+                                .multilineTextAlignment(.center)
+                            
+                            VStack {
+                                Slider(
+                                    value: .convert(from:$singleUseItems),
+                                    in: 0...15,
+                                    step: 1
+                                ) {
+                                    Text("Single-Use Items")
+                                } minimumValueLabel: {
+                                    Text("0")
+                                } maximumValueLabel: {
+                                    Text("15")
+                                }
+                                .padding()
+                                .frame(width: 200)
+                            }
+                        }
+                        .padding()
+                        .frame(width: 345,height:90)
+                        .background(Color("LightGreen"))
+                        .foregroundColor(Color("DarkGreen"))
+                        .cornerRadius(20) /// make the background rounded
+                        .overlay( /// apply a rounded border
+                            RoundedRectangle(cornerRadius: 20)
+                            .strokeBorder(Color("DarkGreen"), lineWidth: 5))
                     }
                     Button("Save") {
-                        trackerVM.updateHabitData(date: date, id: id, meatlessMeals: String(meatlessMeals), milesDriven: String(milesDriven), plasticBottles: String(plasticBottles))
+                        trackerVM.updateHabitData(date: date, id: id, meatlessMeals: String(meatlessMeals), milesDriven: String(milesDriven), paperUsed: String(paperUsed), plasticBottles: String(plasticBottles), recycledItems: String(recycledItems), showerLength: String(showerLength), singleUseItems: String(singleUseItems))
                     }
                     .frame(width:100, height: 30)
                     .background(Color("DarkGreen"))
