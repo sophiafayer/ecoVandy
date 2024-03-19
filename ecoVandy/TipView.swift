@@ -14,7 +14,7 @@ struct TipView: View {
     var body: some View {
         let tip = viewModel.sustainableTip
             VStack{
-                Text("Sustainable Tip of the Day!")
+                Text("Sustainable Tip of the Day")
                     .font(.title)
                     .foregroundStyle(Color("DarkGreen"))
                     .bold()
