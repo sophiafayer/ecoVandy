@@ -1,0 +1,43 @@
+{
+  "configurations" : [
+    {
+      "id" : "D6AE3A8D-3E9C-4B17-882C-29BF6DBF16F1",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "environmentVariableEntries" : [
+      {
+        "key" : "OS_ACTIVITY_MODE",
+        "value" : "disable"
+      }
+    ],
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:ecoVandy.xcodeproj",
+      "identifier" : "71BABD2D2B7D554E00904695",
+      "name" : "ecoVandy"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:ecoVandy.xcodeproj",
+        "identifier" : "71BABD3D2B7D555000904695",
+        "name" : "ecoVandyTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:ecoVandy.xcodeproj",
+        "identifier" : "71BABD472B7D555000904695",
+        "name" : "ecoVandyUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
