@@ -70,6 +70,47 @@ class TrackerViewModel: ObservableObject{
         }
     }
     
+    func fetchUserHabitData(id: String, date: String) async throws -> Habit {
+        let snapshot = try await db.collection("users").document(id).getDocument()
+        guard let data = snapshot.data(), let id = data["email"] as? String else {
+            throw UserDataError.dataNotFound
+        }
+        
+         let userID = data["email"] as? String ?? ""
+           let firstName = data["firstName"] as? String ?? ""
+           let lastName = data["lastName"] as? String ?? ""
+        let meatlessMealsData = data["meatlessMeals"] as? [String: String] ?? ["":""]
+           let meatlessMealsVal = meatlessMealsData[date] ?? ""
+           let milesDrivenData = data["milesDriven"] as? [String: String] ?? ["":""]
+           let milesDrivenVal = milesDrivenData[date] ?? ""
+           let paperUsedData = data["paperUsed"] as? [String: String] ?? ["":""]
+           let paperUsedVal = paperUsedData[date] ?? ""
+           let plasticBottlesData = data["plasticBottles"] as? [String: String] ?? ["":""]
+           let plasticBottlesVal = plasticBottlesData[date] ?? ""
+           let recycledItemsData = data["recycledItems"] as? [String: String] ?? ["":""]
+           let recycledItemsVal = recycledItemsData[date] ?? ""
+           let showerLengthData = data["showerLength"] as? [String: String] ?? ["":""]
+           let showerLengthVal = showerLengthData[date] ?? ""
+           let singleUseItemsData = data["singleUseItems"] as? [String: String] ?? ["":""]
+           let singleUseItemsVal = singleUseItemsData[date] ?? ""
+            
+         return Habit(id: userID.lowercased(), name: firstName+lastName, date: date, meatlessMeals: meatlessMealsVal, milesDriven: milesDrivenVal, paperUsed: paperUsedVal, plasticBottles: plasticBottlesVal, recycledItems: recycledItemsVal, showerLength: showerLengthVal, singleUseItems: singleUseItemsVal)
+    }
+    
+//    func fetchUser(email: String) async throws -> DBUser {
+//        let snapshot = try await db.collection("users").document(email).getDocument()
+//        guard let data = snapshot.data(), let email = data["email"] as? String else {
+//            throw UserDataError.dataNotFound
+//        }
+//        
+//        let firstName = data["firstName"] as? String ?? ""
+//        let lastName = data["lastName"] as? String ?? ""
+//        let year = data["year"] as? String ?? ""
+//        let onCampus = data["onCampus"] as? Bool ?? false
+//        
+//        return DBUser(email:email, firstName: firstName, lastName: lastName, year: year, onCampus: onCampus)
+//    }
+    
     func updateHabitData(date: String, id: String, meatlessMeals: String, milesDriven: String, paperUsed: String, plasticBottles: String, recycledItems: String, showerLength: String, singleUseItems: String) {
         
         let habitData1: [String: Any] = ["meatlessMeals": [date: meatlessMeals]]
