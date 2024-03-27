@@ -13,16 +13,17 @@ import SwiftUI
 
 struct TrackerView: View {
     @State var selectedDate = Date()
+    @State var isEditing:Bool = false
     
     
-    @ObservedObject var trackerVM = TrackerViewModel()
-    @ObservedObject var userVM = UserViewModel()
+    @ObservedObject var trackerVM = TrackerViewModel() //updateHabitData
+    @ObservedObject var userVM = UserHabitViewModel()   //loadUserHabitData, fetchUserHabitData
 
 
     
     var body: some View{
         
-        let currUserEmail = userVM.user?.email ?? ""
+        let user = userVM.user
         
         NavigationStack {
             ZStack{
@@ -43,9 +44,17 @@ struct TrackerView: View {
                         .foregroundStyle(Color("DarkGreen"))
                         .onChange(of: selectedDate){
                             newVal in
+                            Task{
+                                do{
+                                    try await userVM.loadCurrentUserHabit(date: selectedDate.formatted(date: .numeric, time: .omitted))
+                                }catch{
+                                    print("There is an error :\(error.localizedDescription)")
+                                }
+                                
+                            }
                             
                             //add currUser
-                             self.trackerVM.fetchHabitData(date: selectedDate.formatted(date: .numeric, time: .omitted))
+                             //self.trackerVM.fetchHabitData(date: selectedDate.formatted(date: .numeric, time: .omitted))
     //                        for habitType in habitTypes{
     //                            self.trackerVM.fetchData(date: selectedDate.formatted(date: .numeric, time: .omitted), habitType: habitType)
     //                        }
@@ -69,9 +78,14 @@ struct TrackerView: View {
                             LogView(id: "sophia.k.fayer@vanderbilt.edu", date: selectedDate.formatted(date: .numeric, time: .omitted))
                         }
                     label: {
-                        Image(systemName:"plus")
-                            .resizable()
-                            .frame(width:25, height: 25)
+//                        if (isEditing){
+//                            Text("Edit")
+//                        }
+//                        else{
+                            Image(systemName:"plus")
+                                .resizable()
+                                .frame(width:25, height: 25)
+                        //}
                     }
                     .font(.headline)
                     .bold()
@@ -81,13 +95,20 @@ struct TrackerView: View {
                     
                     ScrollView {
                         
+//                        if (user?.meatlessMeals == nil){
+//                            Text("should be empty")
+//                        }//check if any
+                        
                         
                         //ForEach habit (loop through array with all habits)
                         //displays habit tracker data
-                        ForEach( trackerVM.habits) { habit in
+                        //ForEach( userVM.habits) { habit in
                             //currUsesr
-                            if (habit.id == "sophia.k.fayer@vanderbilt.edu"){
-                                Text("Meatless Meals: " + habit.meatlessMeals)
+                            //if (habit.id == user?.id ?? ""){
+                                
+                                //set isEditing to true if the habits already exist?
+                                
+                            Text("Meatless Meals: " + (user?.meatlessMeals ?? ""))
                                     .font(.headline)
                                     .bold()
                                     .foregroundColor(Color("DarkGreen"))
@@ -95,7 +116,7 @@ struct TrackerView: View {
                                     .background(Color("LightGreen"))
                                     .cornerRadius(10)
                                     .padding(.bottom, 10)
-                                Text("Miles Driven: " + habit.milesDriven)
+                            Text("Miles Driven: " + (user?.milesDriven ?? ""))
                                     .font(.headline)
                                     .bold()
                                     .foregroundColor(Color("DarkGreen"))
@@ -103,7 +124,7 @@ struct TrackerView: View {
                                     .background(Color("LightGreen"))
                                     .cornerRadius(10)
                                     .padding(.bottom, 10)
-                                Text("Paper User: " + habit.paperUsed)
+                                Text("Paper User: " + (user?.paperUsed ?? ""))
                                     .font(.headline)
                                     .bold()
                                     .foregroundColor(Color("DarkGreen"))
@@ -111,7 +132,7 @@ struct TrackerView: View {
                                     .background(Color("LightGreen"))
                                     .cornerRadius(10)
                                     .padding(.bottom, 10)
-                                Text("Plastic Waterbottles: " + habit.plasticBottles)
+                                Text("Plastic Waterbottles: " + (user?.plasticBottles ?? ""))
                                     .font(.headline)
                                     .bold()
                                     .foregroundColor(Color("DarkGreen"))
@@ -119,7 +140,7 @@ struct TrackerView: View {
                                     .background(Color("LightGreen"))
                                     .cornerRadius(10)
                                     .padding(.bottom, 10)
-                                Text("Recycled Items: " + habit.recycledItems)
+                                Text("Recycled Items: " + (user?.recycledItems ?? ""))
                                     .font(.headline)
                                     .bold()
                                     .foregroundColor(Color("DarkGreen"))
@@ -127,7 +148,7 @@ struct TrackerView: View {
                                     .background(Color("LightGreen"))
                                     .cornerRadius(10)
                                     .padding(.bottom, 10)
-                                Text("Shower Length: " + habit.showerLength)
+                                Text("Shower Length: " + (user?.showerLength ?? ""))
                                     .font(.headline)
                                     .bold()
                                     .foregroundColor(Color("DarkGreen"))
@@ -135,7 +156,7 @@ struct TrackerView: View {
                                     .background(Color("LightGreen"))
                                     .cornerRadius(10)
                                     .padding(.bottom, 10)
-                                Text("Single Use Items: " + habit.singleUseItems)
+                        Text("Single Use Items: " + (user?.singleUseItems ?? ""))
                                     .font(.headline)
                                     .bold()
                                     .foregroundColor(Color("DarkGreen"))
@@ -143,20 +164,33 @@ struct TrackerView: View {
                                     .background(Color("LightGreen"))
                                     .cornerRadius(10)
                                     .padding(.bottom, 10)
-                            }
+                            //}
                             
                                 
-                            }
+                            //}
                         }
                     }
                     
                 }
                 .onAppear(){
-                    self.trackerVM.fetchHabitData(date: selectedDate.formatted(date: .numeric, time: .omitted))
-    
-                        Task{
-                                try? await userVM.loadCurrentUser()
+                    //self.trackerVM.fetchHabitData(date: selectedDate.formatted(date: .numeric, time: .omitted))
+                    //self.trackerVM.fetchUserHabitData(id: currUserEmail, date: selectedDate.formatted(date: .numeric, time: .omitted))
+//                    Task{
+//                        let currUserEmail = currUser?.email ?? ""
+//                        if (currUserEmail != ""){
+//                            try await self.trackerVM.fetchUserHabitData(id: currUserEmail, date: selectedDate.formatted(date: .numeric, time: .omitted))
+//                        }
+//                        
+//                    }
+                    Task{
+                        do{
+                            try await userVM.loadCurrentUserHabit(date: selectedDate.formatted(date: .numeric, time: .omitted))
+                        }catch{
+                            print("There is an error :\(error.localizedDescription)")
                         }
+                        
+                    }
+                    
                 }
             }
     }
@@ -178,6 +212,8 @@ struct LogView: View {
     @State var showerLength = 0
     @State var singleUseItems = 0
     //add other habits here
+    
+    //@State var isEditing: Bool
     
     
     var body: some View {
@@ -401,8 +437,36 @@ struct LogView: View {
                             RoundedRectangle(cornerRadius: 20)
                             .strokeBorder(Color("DarkGreen"), lineWidth: 5))
                     }
+//                    NavigationLink{
+//                        TrackerView(selectedDate: Date(), isEditing: true)
+//                            .onAppear(){
+//                                trackerVM.updateHabitData(date: date, id: id, meatlessMeals: String(meatlessMeals), milesDriven: String(milesDriven), paperUsed: String(paperUsed), plasticBottles: String(plasticBottles), recycledItems: String(recycledItems), showerLength: String(showerLength), singleUseItems: String(singleUseItems))
+//                                //if (self.isEditing == self.isEditing) {isEditing = true}
+//                                    isEditing.toggle()
+//                                //navigate back to home
+//                            }
+//                    }
+//                label: {
+//                    Text("Save")
+//                        .frame(width:100, height: 30)
+//                        .background(Color("DarkGreen"))
+//                        .foregroundColor(.white)
+//                        .cornerRadius(20)
+//                        .overlay( /// apply a rounded border
+//                            RoundedRectangle(cornerRadius: 20)
+//                            .strokeBorder(Color("DarkGreen"), lineWidth: 5))
+//                }
+//
+////                    .frame(width: 50, height: 20)
+////                    .cornerRadius(30)
+////                    .background(Color("DarkGreen"))
+////                    .foregroundColor(.white)
+                    
                     Button("Save") {
                         trackerVM.updateHabitData(date: date, id: id, meatlessMeals: String(meatlessMeals), milesDriven: String(milesDriven), paperUsed: String(paperUsed), plasticBottles: String(plasticBottles), recycledItems: String(recycledItems), showerLength: String(showerLength), singleUseItems: String(singleUseItems))
+                        //if (self.isEditing == self.isEditing) {isEditing = true}
+                            //isEditing.toggle()
+                        //navigate back to home
                     }
                     .frame(width:100, height: 30)
                     .background(Color("DarkGreen"))
